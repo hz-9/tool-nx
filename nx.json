@@ -1,0 +1,31 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "defaultBase": "master",
+
+  "plugins": ["@nx/eslint", "@nx/vite"],
+
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"],
+      "outputs": ["{projectRoot}/lib", "{projectRoot}/dist"]
+    },
+    "test": {
+      "dependsOn": ["build"],
+      "inputs": ["default", "^production"]
+    },
+    "api-report": {
+      "dependsOn": ["build"],
+      "cache": true,
+      "inputs": ["production", "^production"]
+    },
+    "lint": {
+      "cache": true
+    }
+  },
+
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*"],
+    "production": ["default"]
+  }
+}

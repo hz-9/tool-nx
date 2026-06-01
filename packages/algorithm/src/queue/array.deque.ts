@@ -1,0 +1,29 @@
+import { Deque } from './_base.deque'
+import { ArrayQueue } from './array.queue'
+
+/**
+ *
+ * @public
+ *
+ *  A deque implementation based on array.
+ *
+ *  一个基于数组的双向队列。
+ *
+ */
+export class ArrayDeque<T> extends ArrayQueue<T> implements Deque<T> {
+  public unshift(value: T): void {
+    this._list.unshift(value)
+  }
+
+  public pop(): T | undefined {
+    return this._list.pop()
+  }
+
+  public peekFront(): T | undefined {
+    return this.first
+  }
+
+  public peekBack(): T | undefined {
+    return this.last
+  }
+}

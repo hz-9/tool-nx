@@ -1,0 +1,14 @@
+{
+  "extends": "../../config/tsconfig.tool.json",
+
+  "include": ["src/**/*.ts", "src/**/*.cts", "src/**/*.mts", "src/**/*.tsx"],
+  "exclude": ["node_modules"],
+
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "lib",
+    "declarationDir": "lib",
+    "types": ["vitest/globals", "node"],
+    "paths": {}
+  }
+}

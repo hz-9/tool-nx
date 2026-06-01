@@ -1,0 +1,10 @@
+{
+  "extends": "../../config/tsconfig.library.json",
+
+  "include": ["./vite.config.mts"],
+  "exclude": ["node_modules"],
+
+  "compilerOptions": {
+    "rootDir": "./"
+  }
+}

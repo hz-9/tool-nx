@@ -1,0 +1,51 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/api-extractor/v7/api-extractor.schema.json",
+
+  "mainEntryPointFilePath": "<projectFolder>/lib/index.d.ts",
+
+  "bundledPackages": [],
+
+  "compiler": {},
+
+  "apiReport": {
+    "enabled": true,
+    "reportFileName": "index.api.md",
+    "reportFolder": "<projectFolder>/docs/api",
+    "reportTempFolder": "<projectFolder>/temp/"
+  },
+
+  "docModel": {
+    "enabled": true,
+    "apiJsonFilePath": "<projectFolder>/docs/api/index.api.json"
+  },
+
+  "dtsRollup": {
+    "enabled": true,
+    "untrimmedFilePath": "<projectFolder>/lib/index.d.ts"
+  },
+
+  "tsdocMetadata": {
+    "enabled": true
+  },
+
+  "messages": {
+    "compilerMessageReporting": {
+      "default": {
+        "logLevel": "warning"
+      }
+    },
+    "extractorMessageReporting": {
+      "default": {
+        "logLevel": "warning"
+      },
+      "ae-wrong-input-file-type": {
+        "logLevel": "none"
+      }
+    },
+    "tsdocMessageReporting": {
+      "default": {
+        "logLevel": "warning"
+      }
+    }
+  }
+}

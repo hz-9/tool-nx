@@ -1,0 +1,382 @@
+{
+  "name": "@hz-9/docs-build",
+  "entries": [
+    {
+      "version": "0.7.5",
+      "tag": "@hz-9/docs-build_v0.7.5",
+      "date": "Wed, 12 Mar 2025 08:24:11 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "build: upgrade `@hz-9/eslint-config-airbnb-ts` to `~0.6.0`",
+            "author": "Chen Zhen <heavenzhen999@163.com>",
+            "commit": "f6399a4d44476f57eb4b54cbb7a1b0150df22cb3"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.7.4",
+      "tag": "@hz-9/docs-build_v0.7.4",
+      "date": "Sat, 10 Aug 2024 06:36:42 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@hz-9/heft-node-rig\" to `0.5.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.7.3",
+      "tag": "@hz-9/docs-build_v0.7.3",
+      "date": "Sat, 29 Jun 2024 07:30:34 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "fix: support reading `.sidebar.json` file in multiple languages",
+            "author": "Chen Zhen <heavenzhen999@163.com>",
+            "commit": "9e46fb3ac6d4e9f85abc8a20a0f299a05f5e4ba0"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.7.2",
+      "tag": "@hz-9/docs-build_v0.7.2",
+      "date": "Mon, 24 Jun 2024 06:20:41 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "docs: updated the badge in `README.md`",
+            "author": "Chen Zhen <heavenzhen999@163.com>",
+            "commit": "e7b93c35956827ad7fb0e0a2ac13657e73315207"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@hz-9/heft-node-rig\" to `0.4.8`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.7.1",
+      "tag": "@hz-9/docs-build_v0.7.1",
+      "date": "Sun, 23 Jun 2024 17:37:23 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "fix: close prefetch in vuepress",
+            "author": "Chen Zhen <heavenzhen999@163.com>",
+            "commit": "d002288d21f8a401c981f4a390721ab2cf7f475b"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.7.0",
+      "tag": "@hz-9/docs-build_v0.7.0",
+      "date": "Sun, 23 Jun 2024 16:35:13 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "fix: correct the primary heading in `index.md` for API documentation",
+            "author": "Chen Zhen <heavenzhen999@163.com>",
+            "commit": "08e95f4268863069813ca2ed8bac7d243a2703d0"
+          },
+          {
+            "comment": "feat: add support for retrieving Git URL",
+            "author": "Chen Zhen <heavenzhen999@163.com>",
+            "commit": "08e95f4268863069813ca2ed8bac7d243a2703d0"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.6.3",
+      "tag": "@hz-9/docs-build_v0.6.3",
+      "date": "Sun, 23 Jun 2024 15:51:08 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "docs: change `README.md`",
+            "author": "Chen Zhen <heavenzhen999@163.com>",
+            "commit": "9176316fbf1724cf303a2780cb11b773f52066b9"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@hz-9/heft-node-rig\" to `0.4.7`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.6.2",
+      "tag": "@hz-9/docs-build_v0.6.2",
+      "date": "Sun, 23 Jun 2024 09:07:37 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "docs: upgrade docs",
+            "author": "Chen Zhen <heavenzhen999@163.com>",
+            "commit": "11acef0c6f1e7a41e3d4c6b1ef0ae0a7ce0bc43e"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@hz-9/heft-node-rig\" to `0.4.6`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.6.1",
+      "tag": "@hz-9/docs-build_v0.6.1",
+      "date": "Sat, 22 Jun 2024 17:33:12 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "fix: fix `api-documenter.version.json` write error",
+            "author": "Chen Zhen <heavenzhen999@163.com>",
+            "commit": "4094452fbf397cafdaeea727e648a74c0d2e2ed8"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.6.0",
+      "tag": "@hz-9/docs-build_v0.6.0",
+      "date": "Sat, 22 Jun 2024 17:28:44 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "perf: support for multiple languages",
+            "author": "Chen Zhen <heavenzhen999@163.com>",
+            "commit": "cac6b91178683542cc240f9303f725c690c0b083"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.5.1",
+      "tag": "@hz-9/docs-build_v0.5.1",
+      "date": "Sat, 22 Jun 2024 02:44:32 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "docs: add `LICENSE` file",
+            "author": "Chen Zhen <heavenzhen999@163.com>",
+            "commit": "9dda934ce33d8ccd5f993c9c194a6ec852d592d9"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@hz-9/heft-node-rig\" to `0.4.5`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.5.0",
+      "tag": "@hz-9/docs-build_v0.5.0",
+      "date": "Fri, 21 Jun 2024 15:12:03 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "fix: in `Rush` repository, the `${root}/docs` folder should only support prioritized paths.",
+            "author": "Chen Zhen <heavenzhen999@163.com>",
+            "commit": "e546f2c09160831f65f26076ee1fd3e1557b5ed0"
+          },
+          {
+            "comment": "docs: add docs files",
+            "author": "Chen Zhen <heavenzhen999@163.com>",
+            "commit": "db4630961118903c84eede74bc71727f2eaf67e6"
+          }
+        ],
+        "minor": [
+          {
+            "comment": "feat: allow adding `.sidebar.json` files for folders to customize navigation information",
+            "author": "Chen Zhen <heavenzhen999@163.com>",
+            "commit": "e546f2c09160831f65f26076ee1fd3e1557b5ed0"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@hz-9/heft-node-rig\" to `0.4.4`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.4.0",
+      "tag": "@hz-9/docs-build_v0.4.0",
+      "date": "Tue, 18 Jun 2024 12:34:42 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "feat: added support for watching the `index.api.json` file and updating `Vuepress` accordingly.",
+            "author": "Chen Zhen <heavenzhen999@163.com>",
+            "commit": "2e01ece404576d496eb6ebd37cb258e5f9d923b5"
+          },
+          {
+            "comment": "feat: in `Rush` repositories, stopped displaying individual project's `README.md` files.",
+            "author": "Chen Zhen <heavenzhen999@163.com>",
+            "commit": "2e01ece404576d496eb6ebd37cb258e5f9d923b5"
+          },
+          {
+            "comment": "feat: added sorting functionality for navigation tabs.",
+            "author": "Chen Zhen <heavenzhen999@163.com>",
+            "commit": "2e01ece404576d496eb6ebd37cb258e5f9d923b5"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.3.1",
+      "tag": "@hz-9/docs-build_v0.3.1",
+      "date": "Mon, 17 Jun 2024 12:02:22 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "docs: add `homepage` paramater in `package.json`",
+            "author": "Chen Zhen <heavenzhen999@163.com>",
+            "commit": "8f88c0ddf06ba5d2359d5262b66f911ca98b6492"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@hz-9/heft-node-rig\" to `0.4.3`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.3.0",
+      "tag": "@hz-9/docs-build_v0.3.0",
+      "date": "Mon, 17 Jun 2024 11:44:15 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "feat: expose internal implementation classes to support secondary development.",
+            "author": "Chen Zhen <heavenzhen999@163.com>",
+            "commit": "81f0d7877b0c9c79674bad65c20170542fdbdd79"
+          },
+          {
+            "comment": "feat: support for selecting language information for `vuepress`.",
+            "author": "Chen Zhen <heavenzhen999@163.com>",
+            "commit": "81f0d7877b0c9c79674bad65c20170542fdbdd79"
+          }
+        ],
+        "patch": [
+          {
+            "comment": "feat: remove dependency `read-pkg`.",
+            "author": "Chen Zhen <heavenzhen999@163.com>",
+            "commit": "81f0d7877b0c9c79674bad65c20170542fdbdd79"
+          },
+          {
+            "comment": "feat: added comments and translated them into English comments.",
+            "author": "Chen Zhen <heavenzhen999@163.com>",
+            "commit": "81f0d7877b0c9c79674bad65c20170542fdbdd79"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.2.2",
+      "tag": "@hz-9/docs-build_v0.2.2",
+      "date": "Wed, 12 Jun 2024 09:53:01 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "add `keywords` paramater in `package.json`",
+            "author": "Chen Zhen <heavenzhen999@163.com>",
+            "commit": "f6532667d6a35399aff1337657eccb485f52dae0"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@hz-9/heft-node-rig\" to `0.4.2`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.2.1",
+      "tag": "@hz-9/docs-build_v0.2.1",
+      "date": "Tue, 11 Jun 2024 13:59:28 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "fix: `index.api.json` can be used to generate markdowns instead of `index.d.ts`",
+            "author": "Chen Zhen <heavenzhen999@163.com>",
+            "commit": "5a4346b10aa571c9fc2eb8df6c507183ebe59f3e"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.2.0",
+      "tag": "@hz-9/docs-build_v0.2.0",
+      "date": "Tue, 11 Jun 2024 13:08:39 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "feat: add `--base-url` command-line parameter",
+            "author": "Chen Zhen <heavenzhen999@163.com>",
+            "commit": "756ebf0d9a553b9248df1d8ea6715960391e0519"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.1",
+      "tag": "@hz-9/docs-build_v0.1.1",
+      "date": "Tue, 11 Jun 2024 11:51:28 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "feat: change command-line description",
+            "author": "Chen Zhen <heavenzhen999@163.com>",
+            "commit": "b0b0448343267bd42bd9a266f74fb4a24c318dd2"
+          },
+          {
+            "comment": "docs: upgrade `README.md`",
+            "author": "Chen Zhen <heavenzhen999@163.com>",
+            "commit": "b0b0448343267bd42bd9a266f74fb4a24c318dd2"
+          },
+          {
+            "comment": "feat: support use `api-extractor` command in rig package.",
+            "author": "Chen Zhen <heavenzhen999@163.com>",
+            "commit": "b0b0448343267bd42bd9a266f74fb4a24c318dd2"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@hz-9/heft-node-rig\" to `0.4.1`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.0",
+      "tag": "@hz-9/docs-build_v0.1.0",
+      "date": "Tue, 11 Jun 2024 03:33:51 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "feat: first commit",
+            "author": "Chen Zhen <heavenzhen999@163.com>",
+            "commit": "658b3b2b6d3ab73b36f4ad4a54c9e3f305dc5438"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@hz-9/heft-node-rig\" to `0.4.0`"
+          }
+        ]
+      }
+    }
+  ]
+}
