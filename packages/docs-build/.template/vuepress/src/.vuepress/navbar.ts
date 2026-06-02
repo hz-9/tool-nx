@@ -1,32 +1,15 @@
-import { navbar, type NavbarOptions } from 'vuepress-theme-hope'
-
-export interface ILangObj {
-  'en-US': string
-  'zh-CN': string
-}
-
-export type Lang = keyof ILangObj
-
-export type LangPlus = `/${Lang}/`
-
-export type INavbarOptionsGroup = {
-  '/': NavbarOptions,
-} & {
-  [K in LangPlus]?: NavbarOptions
-}
+import { navbar } from 'vuepress-theme-hope'
 
 /**
  * Icon 从 https://fontawesome.com/search 中获取
  */
 export default (() => {
-  const navbarOptionsGroup: INavbarOptionsGroup = {{ JSON.stringify(navbarOptionsGroup, undefined, 2) }}
+  const navbarPerLang: Record<string, unknown[]> = {{ JSON.stringify(navbarPerLang, undefined, 2) }}
 
-  const obj: INavbarOptionsGroup = {
-    "/": []
-  }
+  const obj: Record<string, unknown[]> = {}
 
-  Object.keys(navbarOptionsGroup).forEach((key) => {
-    obj[key] = navbar(navbarOptionsGroup[key])
+  Object.keys(navbarPerLang).forEach((key) => {
+    obj[key] = navbar(navbarPerLang[key])
   })
 
   return obj

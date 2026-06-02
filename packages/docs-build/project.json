@@ -27,14 +27,6 @@
         "cache": true,
         "cacheLocation": "{projectRoot}/.cache/eslint"
       }
-    },
-    "api-report": {
-      "executor": "nx:run-commands",
-      "dependsOn": ["build"],
-      "options": {
-        "command": "api-extractor run --local",
-        "cwd": "{projectRoot}"
-      }
     }
   },
   "tags": ["scope:library"]

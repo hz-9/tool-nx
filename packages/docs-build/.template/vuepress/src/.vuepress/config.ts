@@ -3,9 +3,11 @@ import { defineUserConfig } from 'vuepress'
 import theme from './theme.js'
 
 export default defineUserConfig({
-  base: "{{ options.baseUrl }}",
+  base: {{ JSON.stringify(baseUrl) }},
 
-  title: '{{ packageInfo.name }}',
+  title: {{ JSON.stringify(title) }},
+
+  description: {{ JSON.stringify(description) }},
 
   locales: {{ JSON.stringify(locales, undefined, 2) }},
 
