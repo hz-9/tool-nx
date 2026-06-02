@@ -1,0 +1,129 @@
+{
+  "baseSourceDir": "docs",
+  "site": {
+    "base": "/tool-nx/",
+    "lang": "en-US",
+    "title": "HZ 9 Tool",
+    "description": "Some 'Node.js' tool library."
+  },
+  "navigation": {
+    "navbar": [
+      {
+        "text": { "en-US": "Overview", "zh-CN": "概述" },
+        "link": "docs/overview/README.md",
+        "icon": "home"
+      },
+      {
+        "text": { "en-US": "Guide", "zh-CN": "指南" },
+        "link": "docs/guide/algorithm/README.md",
+        "icon": "book",
+        "children": [
+          {
+            "text": { "en-US": "@hz-9/algorithm", "zh-CN": "@hz-9/algorithm" },
+            "link": "docs/guide/algorithm/README.md",
+            "icon": "cubes"
+          },
+          {
+            "text": { "en-US": "@hz-9/docs-build", "zh-CN": "@hz-9/docs-build" },
+            "link": "docs/guide/docs-build/README.md",
+            "icon": "cubes"
+          }
+        ]
+      },
+      {
+        "text": { "en-US": "Changelog", "zh-CN": "更新日志" },
+        "link": "docs/changelog/algorithm/README.md",
+        "icon": "clock",
+        "children": [
+          {
+            "text": { "en-US": "@hz-9/algorithm", "zh-CN": "@hz-9/algorithm" },
+            "link": "docs/changelog/algorithm/README.md",
+            "icon": "cubes"
+          },
+          {
+            "text": { "en-US": "@hz-9/docs-build", "zh-CN": "@hz-9/docs-build" },
+            "link": "docs/changelog/docs-build/README.md",
+            "icon": "cubes"
+          }
+        ]
+      },
+      {
+        "text": { "en-US": "API", "zh-CN": "API" },
+        "link": "docs/api/algorithm/README.md",
+        "icon": "code",
+        "children": [
+          {
+            "text": { "en-US": "@hz-9/algorithm", "zh-CN": "@hz-9/algorithm" },
+            "link": "docs/api/algorithm/README.md",
+            "icon": "cubes"
+          },
+          {
+            "text": { "en-US": "@hz-9/docs-build", "zh-CN": "@hz-9/docs-build" },
+            "link": "docs/api/docs-build/README.md",
+            "icon": "cubes"
+          }
+        ]
+      }
+    ],
+    "sidebar": {
+      "/overview/": [
+        {
+          "text": { "en-US": "Overview", "zh-CN": "概述" },
+          "link": "docs/overview/README.md",
+          "icon": "home"
+        },
+        {
+          "text": { "en-US": "To Developers", "zh-CN": "致开发者" },
+          "link": "docs/overview/to-developer.md",
+          "icon": "user"
+        }
+      ],
+      "/guide/algorithm/": [
+        {
+          "text": { "en-US": "Getting Started", "zh-CN": "快速开始" },
+          "link": "docs/guide/algorithm/README.md",
+          "icon": "rocket"
+        }
+      ],
+      "/guide/docs-build/": [
+        {
+          "text": { "en-US": "Getting Started", "zh-CN": "快速开始" },
+          "link": "docs/guide/docs-build/README.md",
+          "icon": "rocket"
+        }
+      ],
+      "/changelog/algorithm/": [
+        {
+          "text": { "en-US": "Algorithm Changelog", "zh-CN": "算法更新日志" },
+          "link": "docs/changelog/algorithm/README.md",
+          "icon": "clock"
+        }
+      ],
+      "/changelog/docs-build/": [
+        {
+          "text": { "en-US": "Docs-build Changelog", "zh-CN": "文档工具更新日志" },
+          "link": "docs/changelog/docs-build/README.md",
+          "icon": "clock"
+        }
+      ],
+      "/api/algorithm/": [
+        {
+          "text": { "en-US": "Algorithm API", "zh-CN": "算法 API" },
+          "link": "docs/api/algorithm/README.md",
+          "icon": "code"
+        }
+      ],
+      "/api/docs-build/": [
+        {
+          "text": { "en-US": "Docs-build API", "zh-CN": "文档工具 API" },
+          "link": "docs/api/docs-build/README.md",
+          "icon": "code"
+        }
+      ]
+    }
+  },
+  "locales": {
+    "languages": ["en-US", "zh-CN"]
+  },
+  "output": "docs/.vuepress"
+}

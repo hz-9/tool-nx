@@ -57,16 +57,16 @@ for tag in $TAGS; do
   git tag "$tag"
 done
 
-echo ""
-echo "=== 7. Publishing to npm ==="
-pnpm changeset publish
+# echo ""
+# echo "=== 7. Publishing to npm ==="
+# pnpm changeset publish
 
-echo ""
-echo "=== 8. Pushing to remote ==="
-echo "  git push && git push --tags"
-git push
-git push --tags
+# echo ""
+# echo "=== 8. Pushing to remote ==="
+# echo "  git push && git push --tags"
+# git push
+# git push --tags
 
-echo ""
-echo "=== Done! ==="
-echo "Published: $TAGS"
+# echo ""
+# echo "=== Done! ==="
+# echo "Published: $TAGS"

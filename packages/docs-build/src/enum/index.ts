@@ -1,10 +1,2 @@
-/**
- * @public
- *
- * Vuepress Operation Types
- *
- */
-export enum VuepressAction {
-  Serve = 'serve',
-  Build = 'build',
-}
+// (Empty) - Previously defined VuepressAction, now removed
+export {}
