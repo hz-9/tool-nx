@@ -1,17 +1,11 @@
-import { glob as globSync } from 'glob'
 import * as fs from 'fs-extra'
 import * as path from 'upath'
-import SimpleGit, { type ConfigValues } from 'simple-git'
 import GitUrlParse from 'git-url-parse'
+import { glob as globSync } from 'glob'
 import console from 'node:console'
+import SimpleGit, { type ConfigValues } from 'simple-git'
 
-import type {
-  DocsBuildOptions,
-  DocsBuildResult,
-  NavbarItem,
-  SidebarItem,
-  IDocsItem,
-} from '../interface/index'
+import type { DocsBuildOptions, DocsBuildResult, IDocsItem, NavbarItem, SidebarItem } from '../interface/index'
 import { readPkg } from '../util/index'
 
 /**
@@ -73,12 +67,7 @@ export class DocsBuild {
       this.processNavbarItems(options.navigation.navbar, lang, langPrefix, outputPath)
 
       // 收集根目录 README（站点首页）
-      this.collectFile(
-        `${options.baseSourceDir}/README.md`,
-        lang,
-        langPrefix,
-        outputPath
-      )
+      this.collectFile(`${options.baseSourceDir}/README.md`, lang, langPrefix, outputPath)
 
       Object.entries(options.navigation.sidebar).forEach(([, items]) => {
         this.processSidebarItems(items, lang, langPrefix, outputPath)
@@ -247,9 +236,7 @@ export class DocsBuild {
 
     if (stat.isFile()) {
       const langFile = this.resolveLangFile(link, lang)
-      const targetPath = isPrimaryLang
-        ? `${outputPath}/src${routePath}`
-        : `${outputPath}/src${langPrefix}${routePath}`
+      const targetPath = isPrimaryLang ? `${outputPath}/src${routePath}` : `${outputPath}/src${langPrefix}${routePath}`
 
       this.docsFiles.set(targetPath, {
         baseFilepath: path.resolve(langFile),
@@ -326,10 +313,7 @@ export class DocsBuild {
   /**
    * 渲染 VuePress 模板文件
    */
-  private async renderTemplates(
-    vuepressPath: string,
-    data: Record<string, unknown>
-  ): Promise<void> {
+  private async renderTemplates(vuepressPath: string, data: Record<string, unknown>): Promise<void> {
     const { SingleDocsBuild } = await import('./single.docs-build')
     const builder = new SingleDocsBuild()
     await builder.renderVuepressTemplates(vuepressPath, data)

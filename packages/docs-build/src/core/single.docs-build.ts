@@ -10,10 +10,7 @@ export class SingleDocsBuild {
   /**
    * 渲染 VuePress 模板文件到输出目录
    */
-  public async renderVuepressTemplates(
-    vuepressDirPath: string,
-    renderData: Record<string, unknown>
-  ): Promise<void> {
+  public async renderVuepressTemplates(vuepressDirPath: string, renderData: Record<string, unknown>): Promise<void> {
     const vuepressTemplate = path.resolve(__dirname, '../../.template/vuepress')
 
     const globResult = await glob('**/*', { dot: true, nodir: true, cwd: vuepressTemplate })
