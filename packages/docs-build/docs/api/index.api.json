@@ -173,6 +173,191 @@
       "preserveMemberOrder": false,
       "members": [
         {
+          "kind": "Interface",
+          "canonicalReference": "@hz-9/docs-build!AppearanceOptions:interface",
+          "docComment": "/**\n * 外观配置\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface AppearanceOptions "
+            }
+          ],
+          "fileUrlPath": "src/interface/options.ts",
+          "releaseTag": "Public",
+          "name": "AppearanceOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!AppearanceOptions#styleDir:member",
+              "docComment": "/**\n * 用户自定义样式目录，同名文件覆盖内置默认样式\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "styleDir?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "styleDir",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@hz-9/docs-build!AutoLinkOptions:interface",
+          "docComment": "/**\n * Options for `<AutoLink>`\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface AutoLinkOptions extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "NavItemOptions",
+              "canonicalReference": "@hz-9/docs-build!NavItemOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/interface/vuepress-theme-hope.ts",
+          "releaseTag": "Public",
+          "name": "AutoLinkOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!AutoLinkOptions#activeMatch:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "activeMatch?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "activeMatch",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!AutoLinkOptions#link:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "link: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "link",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!AutoLinkOptions#rel:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "rel?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "rel",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!AutoLinkOptions#target:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "target?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "target",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        },
+        {
           "kind": "Class",
           "canonicalReference": "@hz-9/docs-build!Commander:class",
           "docComment": "/**\n * Command Line Argument Parsing Class\n *\n * @public\n */\n",
@@ -190,25 +375,240 @@
           "members": [
             {
               "kind": "Method",
-              "canonicalReference": "@hz-9/docs-build!Commander.inRush:member(1)",
+              "canonicalReference": "@hz-9/docs-build!Commander.parse:member(1)",
               "docComment": "",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static inRush(options: "
+                  "text": "static parse(): "
                 },
                 {
                   "kind": "Reference",
-                  "text": "ICommandOptions",
-                  "canonicalReference": "@hz-9/docs-build!ICommandOptions:interface"
+                  "text": "CommanderOptions",
+                  "canonicalReference": "@hz-9/docs-build!CommanderOptions:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": true,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "parse"
+            }
+          ],
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@hz-9/docs-build!CommanderOptions:interface",
+          "docComment": "/**\n * CLI options for \\@hz-9/docs-build\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface CommanderOptions "
+            }
+          ],
+          "fileUrlPath": "src/core/commander.ts",
+          "releaseTag": "Public",
+          "name": "CommanderOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!CommanderOptions#config:member",
+              "docComment": "/**\n * Path to docs-build.config.json\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "config: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "config",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!CommanderOptions#output:member",
+              "docComment": "/**\n * Output path override\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "output?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "output",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "@hz-9/docs-build!DocsBuild:class",
+          "docComment": "/**\n * Generate documentation build configuration\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare class DocsBuild "
+            }
+          ],
+          "fileUrlPath": "src/core/docs-build.ts",
+          "releaseTag": "Public",
+          "isAbstract": false,
+          "name": "DocsBuild",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Constructor",
+              "canonicalReference": "@hz-9/docs-build!DocsBuild:constructor(1)",
+              "docComment": "/**\n * Constructs a new instance of the `DocsBuild` class\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "constructor(options: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "DocsBuildOptions",
+                  "canonicalReference": "@hz-9/docs-build!DocsBuildOptions:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ");"
+                }
+              ],
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "options",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ]
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@hz-9/docs-build!DocsBuild#resolve:member(1)",
+              "docComment": "/**\n * 主入口\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "resolve(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "DocsBuildResult",
+                  "canonicalReference": "@hz-9/docs-build!DocsBuildResult:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "resolve"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@hz-9/docs-build!DocsBuild.resolve:member(1)",
+              "docComment": "/**\n * 执行文档构建\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "static resolve(options: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "DocsBuildOptions",
+                  "canonicalReference": "@hz-9/docs-build!DocsBuildOptions:interface"
                 },
                 {
                   "kind": "Content",
                   "text": "): "
                 },
                 {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
                   "kind": "Content",
-                  "text": "boolean"
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "DocsBuildResult",
+                  "canonicalReference": "@hz-9/docs-build!DocsBuildResult:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
                 },
                 {
                   "kind": "Content",
@@ -218,7 +618,7 @@
               "isStatic": true,
               "returnTypeTokenRange": {
                 "startIndex": 3,
-                "endIndex": 4
+                "endIndex": 7
               },
               "releaseTag": "Public",
               "isProtected": false,
@@ -235,84 +635,171 @@
               ],
               "isOptional": false,
               "isAbstract": false,
-              "name": "inRush"
+              "name": "resolve"
             },
             {
               "kind": "Method",
-              "canonicalReference": "@hz-9/docs-build!Commander.parse:member(1)",
+              "canonicalReference": "@hz-9/docs-build!DocsBuild#transformNavbarOptions:member(1)",
               "docComment": "",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static parse(): "
+                  "text": "transformNavbarOptions(options: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "Promise",
-                  "canonicalReference": "!Promise:interface"
+                  "text": "NavbarOptions",
+                  "canonicalReference": "@hz-9/docs-build!NavbarOptions:type"
                 },
                 {
                   "kind": "Content",
-                  "text": "<"
+                  "text": ", lang: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
                 },
                 {
                   "kind": "Reference",
-                  "text": "ICommandOptions",
-                  "canonicalReference": "@hz-9/docs-build!ICommandOptions:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
+                  "text": "NavbarOptions",
+                  "canonicalReference": "@hz-9/docs-build!NavbarOptions:type"
                 },
                 {
                   "kind": "Content",
                   "text": ";"
                 }
               ],
-              "isStatic": true,
+              "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 5
+                "startIndex": 5,
+                "endIndex": 6
               },
               "releaseTag": "Public",
               "isProtected": false,
               "overloadIndex": 1,
-              "parameters": [],
+              "parameters": [
+                {
+                  "parameterName": "options",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "lang",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": false
+                }
+              ],
               "isOptional": false,
               "isAbstract": false,
-              "name": "parse"
+              "name": "transformNavbarOptions"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@hz-9/docs-build!DocsBuild#transformSidebarOptions:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "transformSidebarOptions(options: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "SidebarOptions",
+                  "canonicalReference": "@hz-9/docs-build!SidebarOptions:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", lang: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "SidebarOptions",
+                  "canonicalReference": "@hz-9/docs-build!SidebarOptions:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "options",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "lang",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "transformSidebarOptions"
             }
           ],
           "implementsTokenRanges": []
         },
         {
           "kind": "Interface",
-          "canonicalReference": "@hz-9/docs-build!ICommandOptions:interface",
-          "docComment": "/**\n * The result of parsing parameters from the command line.\n *\n * Except for 'root', no default values are set.\n *\n * @public\n */\n",
+          "canonicalReference": "@hz-9/docs-build!DocsBuildOptions:interface",
+          "docComment": "/**\n * \\@hz-9/docs-build 完整配置选项\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export interface ICommandOptions "
+              "text": "export interface DocsBuildOptions "
             }
           ],
-          "fileUrlPath": "src/interface/index.ts",
+          "fileUrlPath": "src/interface/options.ts",
           "releaseTag": "Public",
-          "name": "ICommandOptions",
+          "name": "DocsBuildOptions",
           "preserveMemberOrder": false,
           "members": [
             {
               "kind": "PropertySignature",
-              "canonicalReference": "@hz-9/docs-build!ICommandOptions#action:member",
-              "docComment": "/**\n * The action to perform on VuePress.\n */\n",
+              "canonicalReference": "@hz-9/docs-build!DocsBuildOptions#appearance:member",
+              "docComment": "/**\n * 外观配置\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "action?: "
+                  "text": "appearance?: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "VuepressAction",
-                  "canonicalReference": "@hz-9/docs-build!VuepressAction:enum"
+                  "text": "AppearanceOptions",
+                  "canonicalReference": "@hz-9/docs-build!AppearanceOptions:interface"
                 },
                 {
                   "kind": "Content",
@@ -322,7 +809,7 @@
               "isReadonly": false,
               "isOptional": true,
               "releaseTag": "Public",
-              "name": "action",
+              "name": "appearance",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -330,12 +817,12 @@
             },
             {
               "kind": "PropertySignature",
-              "canonicalReference": "@hz-9/docs-build!ICommandOptions#baseUrl:member",
-              "docComment": "/**\n * (Vuepress) The base path for generating documentation.\n *\n * Default: '/'\n *\n * Since 0.2.0\n */\n",
+              "canonicalReference": "@hz-9/docs-build!DocsBuildOptions#baseSourceDir:member",
+              "docComment": "/**\n * 源 markdown 路径前缀，用于路径映射 如 'docs'，则 link: 'docs/guide/README.md' 会映射到路由 '/guide/'\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "baseUrl: "
+                  "text": "baseSourceDir: "
                 },
                 {
                   "kind": "Content",
@@ -349,7 +836,7 @@
               "isReadonly": false,
               "isOptional": false,
               "releaseTag": "Public",
-              "name": "baseUrl",
+              "name": "baseSourceDir",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -357,12 +844,68 @@
             },
             {
               "kind": "PropertySignature",
-              "canonicalReference": "@hz-9/docs-build!ICommandOptions#config:member",
-              "docComment": "/**\n * The path to the 'api-extractor.json' file.\n */\n",
+              "canonicalReference": "@hz-9/docs-build!DocsBuildOptions#locales:member",
+              "docComment": "/**\n * 多语言配置，不传则为单语言\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "config?: "
+                  "text": "locales?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "LocalesOptions",
+                  "canonicalReference": "@hz-9/docs-build!LocalesOptions:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "locales",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!DocsBuildOptions#navigation:member",
+              "docComment": "/**\n * 导航配置\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "navigation: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "NavigationOptions",
+                  "canonicalReference": "@hz-9/docs-build!NavigationOptions:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "navigation",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!DocsBuildOptions#output:member",
+              "docComment": "/**\n * 输出目录，默认 './docs/.vuepress'\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "output?: "
                 },
                 {
                   "kind": "Content",
@@ -376,7 +919,7 @@
               "isReadonly": false,
               "isOptional": true,
               "releaseTag": "Public",
-              "name": "config",
+              "name": "output",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -384,48 +927,17 @@
             },
             {
               "kind": "PropertySignature",
-              "canonicalReference": "@hz-9/docs-build!ICommandOptions#docsSpace:member",
-              "docComment": "/**\n * The location where the documentation will be generated.\n *\n * Default: `${root}/docs/.vuepress`.\n */\n",
+              "canonicalReference": "@hz-9/docs-build!DocsBuildOptions#site:member",
+              "docComment": "/**\n * 站点元信息\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "docsSpace: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "docsSpace",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@hz-9/docs-build!ICommandOptions#lang:member",
-              "docComment": "/**\n * (Vuepress) The language of the documentation.\n *\n * Default: 'en-US'\n *\n * List of supported languages. Please [check](https://theme-hope.vuejs.press/config/i18n.html#supported-languages).\n *\n * Since 0.3.0\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "lang: "
+                  "text": "site: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "Lang",
-                  "canonicalReference": "@hz-9/docs-build!Lang:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": "[]"
+                  "text": "SiteOptions",
+                  "canonicalReference": "@hz-9/docs-build!SiteOptions:interface"
                 },
                 {
                   "kind": "Content",
@@ -435,61 +947,7 @@
               "isReadonly": false,
               "isOptional": false,
               "releaseTag": "Public",
-              "name": "lang",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 3
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@hz-9/docs-build!ICommandOptions#markdownPath:member",
-              "docComment": "/**\n * API Docs:\n *\n * The output path for Markdown-related files.\n *\n * Default: './docs/.markdowns'\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "markdownPath: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "markdownPath",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@hz-9/docs-build!ICommandOptions#root:member",
-              "docComment": "/**\n * The root path of the operation. Will be directly set by Command with the default value of process.cwd().\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "root: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "root",
+              "name": "site",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -500,104 +958,23 @@
         },
         {
           "kind": "Interface",
-          "canonicalReference": "@hz-9/docs-build!IConfigOptions:interface",
-          "docComment": "/**\n * Configuration information parsed from 'api-extractor.json'.\n *\n * @public\n */\n",
+          "canonicalReference": "@hz-9/docs-build!DocsBuildResult:interface",
+          "docComment": "/**\n * 程序调用结果\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export interface IConfigOptions "
+              "text": "export interface DocsBuildResult "
             }
           ],
-          "fileUrlPath": "src/interface/index.ts",
+          "fileUrlPath": "src/interface/options.ts",
           "releaseTag": "Public",
-          "name": "IConfigOptions",
+          "name": "DocsBuildResult",
           "preserveMemberOrder": false,
           "members": [
             {
               "kind": "PropertySignature",
-              "canonicalReference": "@hz-9/docs-build!IConfigOptions#apiDocVersionFilepath:member",
-              "docComment": "/**\n * `api documenter`version filepath.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "apiDocVersionFilepath: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "apiDocVersionFilepath",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@hz-9/docs-build!IConfigOptions#apiJsonFilePath:member",
-              "docComment": "/**\n * API Docs:\n *\n * The path where the 'index.api.json' file is located.\n *\n * Default: Reads the 'docModel.apiJsonFilePath' property from the 'api-extractor.base.json' file.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "apiJsonFilePath: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "apiJsonFilePath",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@hz-9/docs-build!IConfigOptions#apiPath:member",
-              "docComment": "/**\n * API Docs:\n *\n * The folder where the 'index.api.md' file is located.\n *\n * Default: Reads the 'apiReport.reportFolder' property from the 'api-extractor.base.json' file.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "apiPath: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "apiPath",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@hz-9/docs-build!IConfigOptions#configPath:member",
-              "docComment": "/**\n * The path to the configuration file.\n */\n",
+              "canonicalReference": "@hz-9/docs-build!DocsBuildResult#configPath:member",
+              "docComment": "/**\n * 生成的 VuePress 配置文件路径\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -623,12 +1000,12 @@
             },
             {
               "kind": "PropertySignature",
-              "canonicalReference": "@hz-9/docs-build!IConfigOptions#entryPath:member",
-              "docComment": "/**\n * API Docs:\n *\n * The entry file.\n *\n * Default: Reads the 'mainEntryPointFilePath' property from the 'api-extractor.base.json' file.\n */\n",
+              "canonicalReference": "@hz-9/docs-build!DocsBuildResult#outputPath:member",
+              "docComment": "/**\n * 输出目录路径\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "entryPath: "
+                  "text": "outputPath: "
                 },
                 {
                   "kind": "Content",
@@ -642,34 +1019,7 @@
               "isReadonly": false,
               "isOptional": false,
               "releaseTag": "Public",
-              "name": "entryPath",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@hz-9/docs-build!IConfigOptions#rigPackage:member",
-              "docComment": "/**\n * The path to the rig package.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "rigPackage?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "rigPackage",
+              "name": "outputPath",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -679,28 +1029,29 @@
           "extendsTokenRanges": []
         },
         {
-          "kind": "Interface",
-          "canonicalReference": "@hz-9/docs-build!IDocsItem:interface",
-          "docComment": "/**\n * The data mounting object.\n *\n * @public\n */\n",
+          "kind": "Class",
+          "canonicalReference": "@hz-9/docs-build!DocsOptions:class",
+          "docComment": "/**\n * 配置文件加载与校验\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export interface IDocsItem "
+              "text": "export declare class DocsOptions "
             }
           ],
-          "fileUrlPath": "src/interface/index.ts",
+          "fileUrlPath": "src/core/docs-options.ts",
           "releaseTag": "Public",
-          "name": "IDocsItem",
+          "isAbstract": false,
+          "name": "DocsOptions",
           "preserveMemberOrder": false,
           "members": [
             {
-              "kind": "PropertySignature",
-              "canonicalReference": "@hz-9/docs-build!IDocsItem#baseFilepath:member",
-              "docComment": "",
+              "kind": "Method",
+              "canonicalReference": "@hz-9/docs-build!DocsOptions.load:member(1)",
+              "docComment": "/**\n * 从文件加载并校验配置\n *\n * @param configPath - 配置文件绝对路径\n *\n * @returns 校验通过的配置对象\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "baseFilepath: "
+                  "text": "static load(configPath: "
                 },
                 {
                   "kind": "Content",
@@ -708,207 +1059,151 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "baseFilepath",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@hz-9/docs-build!IDocsItem#focusFilepath:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "focusFilepath: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "focusFilepath",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@hz-9/docs-build!IDocsItem#isDir:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "isDir: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "boolean"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "isDir",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@hz-9/docs-build!IDocsItem#transform:member",
-              "docComment": "/**\n * Performs file transformation.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "transform?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "(s: string) => string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "transform",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            }
-          ],
-          "extendsTokenRanges": []
-        },
-        {
-          "kind": "Interface",
-          "canonicalReference": "@hz-9/docs-build!IDocsParseSchemeItem:interface",
-          "docComment": "/**\n * File parsing scheme (sub-items for each feature).\n *\n * @public\n */\n",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export interface IDocsParseSchemeItem "
-            }
-          ],
-          "fileUrlPath": "src/interface/index.ts",
-          "releaseTag": "Public",
-          "name": "IDocsParseSchemeItem",
-          "preserveMemberOrder": false,
-          "members": [
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@hz-9/docs-build!IDocsParseSchemeItem#isDir:member",
-              "docComment": "/**\n * Whether it is a directory\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "isDir?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "true"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "isDir",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@hz-9/docs-build!IDocsParseSchemeItem#navName:member",
-              "docComment": "/**\n * Navigation display name.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "navName: "
+                  "text": "): "
                 },
                 {
                   "kind": "Reference",
-                  "text": "ILangObj",
-                  "canonicalReference": "@hz-9/docs-build!ILangObj:interface"
+                  "text": "DocsBuildOptions",
+                  "canonicalReference": "@hz-9/docs-build!DocsBuildOptions:interface"
                 },
                 {
                   "kind": "Content",
                   "text": ";"
                 }
               ],
-              "isReadonly": false,
-              "isOptional": false,
+              "isStatic": true,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
               "releaseTag": "Public",
-              "name": "navName",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "configPath",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "load"
             },
             {
-              "kind": "PropertySignature",
-              "canonicalReference": "@hz-9/docs-build!IDocsParseSchemeItem#navPath:member",
-              "docComment": "/**\n * Navigation path.\n */\n",
+              "kind": "Method",
+              "canonicalReference": "@hz-9/docs-build!DocsOptions.validateConfig:member(1)",
+              "docComment": "/**\n * 验证配置文件必需的字段\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "navPath: "
+                  "text": "static validateConfig(config: "
                 },
                 {
                   "kind": "Content",
-                  "text": "string"
+                  "text": "unknown"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "asserts "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "config",
+                  "canonicalReference": "@hz-9/docs-build!~config"
+                },
+                {
+                  "kind": "Content",
+                  "text": " is "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "DocsBuildOptions",
+                  "canonicalReference": "@hz-9/docs-build!DocsBuildOptions:interface"
                 },
                 {
                   "kind": "Content",
                   "text": ";"
                 }
               ],
-              "isReadonly": false,
-              "isOptional": false,
+              "isStatic": true,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
               "releaseTag": "Public",
-              "name": "navPath",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "config",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "validateConfig"
+            }
+          ],
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@hz-9/docs-build!IGNORE_PATTERNS:var",
+          "docComment": "/**\n * 預設忽略的文件/目錄模式列表\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "IGNORE_PATTERNS: "
             },
             {
+              "kind": "Content",
+              "text": "string[]"
+            }
+          ],
+          "fileUrlPath": "src/core/constants.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "IGNORE_PATTERNS",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@hz-9/docs-build!LocalesOptions:interface",
+          "docComment": "/**\n * 多语言配置\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface LocalesOptions "
+            }
+          ],
+          "fileUrlPath": "src/interface/options.ts",
+          "releaseTag": "Public",
+          "name": "LocalesOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
               "kind": "PropertySignature",
-              "canonicalReference": "@hz-9/docs-build!IDocsParseSchemeItem#parsePath:member",
-              "docComment": "/**\n * Parsing path.\n */\n",
+              "canonicalReference": "@hz-9/docs-build!LocalesOptions#languages:member",
+              "docComment": "/**\n * 启用的语言列表，如 ['en-US', 'zh-CN']\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "parsePath: "
+                  "text": "languages: "
                 },
                 {
                   "kind": "Content",
@@ -922,34 +1217,7 @@
               "isReadonly": false,
               "isOptional": false,
               "releaseTag": "Public",
-              "name": "parsePath",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@hz-9/docs-build!IDocsParseSchemeItem#transform:member",
-              "docComment": "/**\n * Perform file transformation.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "transform?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "(s: string) => string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "transform",
+              "name": "languages",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -959,188 +1227,18 @@
           "extendsTokenRanges": []
         },
         {
-          "kind": "Interface",
-          "canonicalReference": "@hz-9/docs-build!IGitInfo:interface",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export interface IGitInfo "
-            }
-          ],
-          "fileUrlPath": "src/interface/index.ts",
-          "releaseTag": "Public",
-          "name": "IGitInfo",
-          "preserveMemberOrder": false,
-          "members": [
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@hz-9/docs-build!IGitInfo#gitUrl:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "gitUrl?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "gitUrl",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            }
-          ],
-          "extendsTokenRanges": []
-        },
-        {
-          "kind": "Interface",
-          "canonicalReference": "@hz-9/docs-build!ILangObj:interface",
+          "kind": "TypeAlias",
+          "canonicalReference": "@hz-9/docs-build!NavbarGroupOptions:type",
           "docComment": "/**\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export interface ILangObj "
-            }
-          ],
-          "fileUrlPath": "src/interface/index.ts",
-          "releaseTag": "Public",
-          "name": "ILangObj",
-          "preserveMemberOrder": false,
-          "members": [
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@hz-9/docs-build!ILangObj#\"en-US\":member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "'en-US': "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "\"en-US\"",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@hz-9/docs-build!ILangObj#\"zh-CN\":member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "'zh-CN': "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "\"zh-CN\"",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            }
-          ],
-          "extendsTokenRanges": []
-        },
-        {
-          "kind": "TypeAlias",
-          "canonicalReference": "@hz-9/docs-build!ILocales:type",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export type ILocales = "
-            },
-            {
-              "kind": "Content",
-              "text": "{\n    '/': {\n        lang: "
+              "text": "export type NavbarGroupOptions = "
             },
             {
               "kind": "Reference",
-              "text": "Lang",
-              "canonicalReference": "@hz-9/docs-build!Lang:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";\n    };\n} & {\n    [K in "
-            },
-            {
-              "kind": "Reference",
-              "text": "LangPlus",
-              "canonicalReference": "@hz-9/docs-build!LangPlus:type"
-            },
-            {
-              "kind": "Content",
-              "text": "]?: {\n        lang: "
-            },
-            {
-              "kind": "Reference",
-              "text": "Lang",
-              "canonicalReference": "@hz-9/docs-build!Lang:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";\n    };\n}"
-            },
-            {
-              "kind": "Content",
-              "text": ";"
-            }
-          ],
-          "fileUrlPath": "src/interface/index.ts",
-          "releaseTag": "Public",
-          "name": "ILocales",
-          "typeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 8
-          }
-        },
-        {
-          "kind": "TypeAlias",
-          "canonicalReference": "@hz-9/docs-build!INavbarGroupOptions:type",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export type INavbarGroupOptions = "
-            },
-            {
-              "kind": "Reference",
-              "text": "INavGroup",
-              "canonicalReference": "@hz-9/docs-build!~INavGroup:interface"
+              "text": "NavGroup",
+              "canonicalReference": "@hz-9/docs-build!NavGroup:interface"
             },
             {
               "kind": "Content",
@@ -1148,8 +1246,8 @@
             },
             {
               "kind": "Reference",
-              "text": "INavbarLinkOptions",
-              "canonicalReference": "@hz-9/docs-build!INavbarLinkOptions:type"
+              "text": "NavbarLinkOptions",
+              "canonicalReference": "@hz-9/docs-build!NavbarLinkOptions:type"
             },
             {
               "kind": "Content",
@@ -1157,8 +1255,8 @@
             },
             {
               "kind": "Reference",
-              "text": "INavGroup",
-              "canonicalReference": "@hz-9/docs-build!~INavGroup:interface"
+              "text": "NavGroup",
+              "canonicalReference": "@hz-9/docs-build!NavGroup:interface"
             },
             {
               "kind": "Content",
@@ -1166,21 +1264,21 @@
             },
             {
               "kind": "Reference",
-              "text": "INavbarLinkOptions",
-              "canonicalReference": "@hz-9/docs-build!INavbarLinkOptions:type"
+              "text": "NavbarLinkOptions",
+              "canonicalReference": "@hz-9/docs-build!NavbarLinkOptions:type"
             },
             {
               "kind": "Content",
-              "text": "> | string>"
+              "text": ">>"
             },
             {
               "kind": "Content",
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/interface/vuepress-theme-hope.navbar-options.ts",
+          "fileUrlPath": "src/interface/vuepress-theme-hope.ts",
           "releaseTag": "Public",
-          "name": "INavbarGroupOptions",
+          "name": "NavbarGroupOptions",
           "typeTokenRange": {
             "startIndex": 1,
             "endIndex": 9
@@ -1188,39 +1286,43 @@
         },
         {
           "kind": "TypeAlias",
-          "canonicalReference": "@hz-9/docs-build!INavbarLinkOptions:type",
-          "docComment": "",
+          "canonicalReference": "@hz-9/docs-build!NavbarLinkOptions:type",
+          "docComment": "/**\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type INavbarLinkOptions = "
+              "text": "export type NavbarLinkOptions = "
             },
             {
               "kind": "Reference",
-              "text": "IAutoLinkOptions",
-              "canonicalReference": "@hz-9/docs-build!IAutoLinkOptions:interface"
+              "text": "AutoLinkOptions",
+              "canonicalReference": "@hz-9/docs-build!AutoLinkOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " | string"
             },
             {
               "kind": "Content",
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/interface/vuepress-theme-hope.navbar-options.ts",
+          "fileUrlPath": "src/interface/vuepress-theme-hope.ts",
           "releaseTag": "Public",
-          "name": "INavbarLinkOptions",
+          "name": "NavbarLinkOptions",
           "typeTokenRange": {
             "startIndex": 1,
-            "endIndex": 2
+            "endIndex": 3
           }
         },
         {
           "kind": "TypeAlias",
-          "canonicalReference": "@hz-9/docs-build!INavbarOptions:type",
-          "docComment": "",
+          "canonicalReference": "@hz-9/docs-build!NavbarOptions:type",
+          "docComment": "/**\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type INavbarOptions = "
+              "text": "export type NavbarOptions = "
             },
             {
               "kind": "Content",
@@ -1228,8 +1330,8 @@
             },
             {
               "kind": "Reference",
-              "text": "INavbarLinkOptions",
-              "canonicalReference": "@hz-9/docs-build!INavbarLinkOptions:type"
+              "text": "NavbarLinkOptions",
+              "canonicalReference": "@hz-9/docs-build!NavbarLinkOptions:type"
             },
             {
               "kind": "Content",
@@ -1237,92 +1339,347 @@
             },
             {
               "kind": "Reference",
-              "text": "INavbarGroupOptions",
-              "canonicalReference": "@hz-9/docs-build!INavbarGroupOptions:type"
+              "text": "NavbarGroupOptions",
+              "canonicalReference": "@hz-9/docs-build!NavbarGroupOptions:type"
             },
             {
               "kind": "Content",
-              "text": " | string)[]"
+              "text": ")[]"
             },
             {
               "kind": "Content",
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/interface/vuepress-theme-hope.navbar-options.ts",
+          "fileUrlPath": "src/interface/vuepress-theme-hope.ts",
           "releaseTag": "Public",
-          "name": "INavbarOptions",
+          "name": "NavbarOptions",
           "typeTokenRange": {
             "startIndex": 1,
             "endIndex": 6
           }
         },
         {
-          "kind": "TypeAlias",
-          "canonicalReference": "@hz-9/docs-build!INavbarOptionsGroup:type",
-          "docComment": "",
+          "kind": "Interface",
+          "canonicalReference": "@hz-9/docs-build!NavGroup:interface",
+          "docComment": "/**\n * Base nav group, has nav items children\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type INavbarOptionsGroup = "
-            },
-            {
-              "kind": "Content",
-              "text": "{\n    '/': "
+              "text": "export interface NavGroup<Child> extends "
             },
             {
               "kind": "Reference",
-              "text": "INavbarOptions",
-              "canonicalReference": "@hz-9/docs-build!INavbarOptions:type"
+              "text": "NavItemOptions",
+              "canonicalReference": "@hz-9/docs-build!NavItemOptions:interface"
             },
             {
               "kind": "Content",
-              "text": ";\n} & {\n    [K in "
-            },
-            {
-              "kind": "Reference",
-              "text": "LangPlus",
-              "canonicalReference": "@hz-9/docs-build!LangPlus:type"
-            },
-            {
-              "kind": "Content",
-              "text": "]?: "
-            },
-            {
-              "kind": "Reference",
-              "text": "INavbarOptions",
-              "canonicalReference": "@hz-9/docs-build!INavbarOptions:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";\n}"
-            },
-            {
-              "kind": "Content",
-              "text": ";"
+              "text": " "
             }
           ],
-          "fileUrlPath": "src/interface/index.ts",
+          "fileUrlPath": "src/interface/vuepress-theme-hope.ts",
           "releaseTag": "Public",
-          "name": "INavbarOptionsGroup",
-          "typeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 8
-          }
+          "typeParameters": [
+            {
+              "typeParameterName": "Child",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "NavGroup",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!NavGroup#children:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "children: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "Child[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "children",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!NavGroup#link:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "link?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "link",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!NavGroup#prefix:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "prefix?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "prefix",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@hz-9/docs-build!NavigationOptions:interface",
+          "docComment": "/**\n * 导航配置\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface NavigationOptions "
+            }
+          ],
+          "fileUrlPath": "src/interface/options.ts",
+          "releaseTag": "Public",
+          "name": "NavigationOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!NavigationOptions#navbar:member",
+              "docComment": "/**\n * 导航栏列表\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "navbar: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "NavbarOptions",
+                  "canonicalReference": "@hz-9/docs-build!NavbarOptions:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "navbar",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!NavigationOptions#sidebar:member",
+              "docComment": "/**\n * 侧边栏，key 为路由路径前缀，如 '/guide/'\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "sidebar: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "SidebarOptions",
+                  "canonicalReference": "@hz-9/docs-build!SidebarOptions:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "sidebar",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@hz-9/docs-build!NavItemOptions:interface",
+          "docComment": "/**\n * Base nav item, displayed as text\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface NavItemOptions "
+            }
+          ],
+          "fileUrlPath": "src/interface/vuepress-theme-hope.ts",
+          "releaseTag": "Public",
+          "name": "NavItemOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!NavItemOptions#ariaLabel:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "ariaLabel?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "ariaLabel",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!NavItemOptions#icon:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "icon?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "icon",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!NavItemOptions#text:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "text: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string | "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Record",
+                  "canonicalReference": "!Record:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string, string>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "text",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              }
+            }
+          ],
+          "extendsTokenRanges": []
         },
         {
           "kind": "TypeAlias",
-          "canonicalReference": "@hz-9/docs-build!ISidebarArrayOptions:type",
-          "docComment": "",
+          "canonicalReference": "@hz-9/docs-build!SidebarArrayOptions:type",
+          "docComment": "/**\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type ISidebarArrayOptions = "
+              "text": "export type SidebarArrayOptions = "
             },
             {
               "kind": "Reference",
-              "text": "ISidebarItemOptions",
-              "canonicalReference": "@hz-9/docs-build!~ISidebarItemOptions:type"
+              "text": "SidebarItem",
+              "canonicalReference": "@hz-9/docs-build!~SidebarItem:type"
             },
             {
               "kind": "Content",
@@ -1333,67 +1690,189 @@
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/interface/vuepress-theme-hope.sidebar-options.ts",
+          "fileUrlPath": "src/interface/vuepress-theme-hope.ts",
           "releaseTag": "Public",
-          "name": "ISidebarArrayOptions",
+          "name": "SidebarArrayOptions",
           "typeTokenRange": {
             "startIndex": 1,
             "endIndex": 3
           }
         },
         {
-          "kind": "TypeAlias",
-          "canonicalReference": "@hz-9/docs-build!ISidebarItem:type",
-          "docComment": "",
+          "kind": "Interface",
+          "canonicalReference": "@hz-9/docs-build!SidebarGroupItem:interface",
+          "docComment": "/**\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type ISidebarItem = "
+              "text": "export interface SidebarGroupItem extends "
             },
             {
               "kind": "Reference",
-              "text": "ISidebarLinkItem",
-              "canonicalReference": "@hz-9/docs-build!~ISidebarLinkItem:type"
+              "text": "NavItemOptions",
+              "canonicalReference": "@hz-9/docs-build!NavItemOptions:interface"
             },
             {
               "kind": "Content",
-              "text": " | "
-            },
-            {
-              "kind": "Reference",
-              "text": "ISidebarGroupItem",
-              "canonicalReference": "@hz-9/docs-build!~ISidebarGroupItem:interface"
-            },
-            {
-              "kind": "Content",
-              "text": " | "
-            },
-            {
-              "kind": "Reference",
-              "text": "ISidebarItemOptions",
-              "canonicalReference": "@hz-9/docs-build!~ISidebarItemOptions:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";"
+              "text": " "
             }
           ],
-          "fileUrlPath": "src/interface/vuepress-theme-hope.sidebar-options.ts",
+          "fileUrlPath": "src/interface/vuepress-theme-hope.ts",
           "releaseTag": "Public",
-          "name": "ISidebarItem",
-          "typeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 6
-          }
+          "name": "SidebarGroupItem",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!SidebarGroupItem#children:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "children: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "("
+                },
+                {
+                  "kind": "Reference",
+                  "text": "SidebarPageItem",
+                  "canonicalReference": "@hz-9/docs-build!SidebarPageItem:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "SidebarGroupItem",
+                  "canonicalReference": "@hz-9/docs-build!SidebarGroupItem:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "SidebarStructureItem",
+                  "canonicalReference": "@hz-9/docs-build!SidebarStructureItem:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | string)[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "children",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 8
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!SidebarGroupItem#collapsible:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "collapsible?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "collapsible",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!SidebarGroupItem#link:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "link?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "link",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!SidebarGroupItem#prefix:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "prefix?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "prefix",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
         },
         {
           "kind": "TypeAlias",
-          "canonicalReference": "@hz-9/docs-build!ISidebarObjectOptions:type",
-          "docComment": "",
+          "canonicalReference": "@hz-9/docs-build!SidebarObjectOptions:type",
+          "docComment": "/**\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type ISidebarObjectOptions = "
+              "text": "export type SidebarObjectOptions = "
             },
             {
               "kind": "Reference",
@@ -1406,21 +1885,21 @@
             },
             {
               "kind": "Reference",
-              "text": "ISidebarArrayOptions",
-              "canonicalReference": "@hz-9/docs-build!ISidebarArrayOptions:type"
+              "text": "SidebarArrayOptions",
+              "canonicalReference": "@hz-9/docs-build!SidebarArrayOptions:type"
             },
             {
               "kind": "Content",
-              "text": " | 'structure' | false>"
+              "text": " | 'structure' | 'heading' | false>"
             },
             {
               "kind": "Content",
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/interface/vuepress-theme-hope.sidebar-options.ts",
+          "fileUrlPath": "src/interface/vuepress-theme-hope.ts",
           "releaseTag": "Public",
-          "name": "ISidebarObjectOptions",
+          "name": "SidebarObjectOptions",
           "typeTokenRange": {
             "startIndex": 1,
             "endIndex": 5
@@ -1428,17 +1907,17 @@
         },
         {
           "kind": "TypeAlias",
-          "canonicalReference": "@hz-9/docs-build!ISidebarOptions:type",
-          "docComment": "",
+          "canonicalReference": "@hz-9/docs-build!SidebarOptions:type",
+          "docComment": "/**\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type ISidebarOptions = "
+              "text": "export type SidebarOptions = "
             },
             {
               "kind": "Reference",
-              "text": "ISidebarArrayOptions",
-              "canonicalReference": "@hz-9/docs-build!ISidebarArrayOptions:type"
+              "text": "SidebarArrayOptions",
+              "canonicalReference": "@hz-9/docs-build!SidebarArrayOptions:type"
             },
             {
               "kind": "Content",
@@ -1446,21 +1925,21 @@
             },
             {
               "kind": "Reference",
-              "text": "ISidebarObjectOptions",
-              "canonicalReference": "@hz-9/docs-build!ISidebarObjectOptions:type"
+              "text": "SidebarObjectOptions",
+              "canonicalReference": "@hz-9/docs-build!SidebarObjectOptions:type"
             },
             {
               "kind": "Content",
-              "text": " | 'structure' | false"
+              "text": " | 'structure' | 'heading' | false"
             },
             {
               "kind": "Content",
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/interface/vuepress-theme-hope.sidebar-options.ts",
+          "fileUrlPath": "src/interface/vuepress-theme-hope.ts",
           "releaseTag": "Public",
-          "name": "ISidebarOptions",
+          "name": "SidebarOptions",
           "typeTokenRange": {
             "startIndex": 1,
             "endIndex": 5
@@ -1468,491 +1947,67 @@
         },
         {
           "kind": "TypeAlias",
-          "canonicalReference": "@hz-9/docs-build!ISidebarOptionsGroup:type",
-          "docComment": "",
+          "canonicalReference": "@hz-9/docs-build!SidebarPageItem:type",
+          "docComment": "/**\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type ISidebarOptionsGroup = "
-            },
-            {
-              "kind": "Content",
-              "text": "{\n    '/': "
+              "text": "export type SidebarPageItem = "
             },
             {
               "kind": "Reference",
-              "text": "ISidebarObjectOptions",
-              "canonicalReference": "@hz-9/docs-build!ISidebarObjectOptions:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";\n} & {\n    [K in "
-            },
-            {
-              "kind": "Reference",
-              "text": "LangPlus",
-              "canonicalReference": "@hz-9/docs-build!LangPlus:type"
-            },
-            {
-              "kind": "Content",
-              "text": "]?: "
-            },
-            {
-              "kind": "Reference",
-              "text": "ISidebarObjectOptions",
-              "canonicalReference": "@hz-9/docs-build!ISidebarObjectOptions:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";\n}"
+              "text": "AutoLinkOptions",
+              "canonicalReference": "@hz-9/docs-build!AutoLinkOptions:interface"
             },
             {
               "kind": "Content",
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/interface/index.ts",
+          "fileUrlPath": "src/interface/vuepress-theme-hope.ts",
           "releaseTag": "Public",
-          "name": "ISidebarOptionsGroup",
+          "name": "SidebarPageItem",
           "typeTokenRange": {
             "startIndex": 1,
-            "endIndex": 8
+            "endIndex": 2
           }
         },
         {
-          "kind": "TypeAlias",
-          "canonicalReference": "@hz-9/docs-build!Lang:type",
-          "docComment": "",
+          "kind": "Interface",
+          "canonicalReference": "@hz-9/docs-build!SidebarStructureItem:interface",
+          "docComment": "/**\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type Lang = "
-            },
-            {
-              "kind": "Content",
-              "text": "keyof "
+              "text": "export interface SidebarStructureItem extends "
             },
             {
               "kind": "Reference",
-              "text": "ILangObj",
-              "canonicalReference": "@hz-9/docs-build!ILangObj:interface"
-            },
-            {
-              "kind": "Content",
-              "text": ";"
-            }
-          ],
-          "fileUrlPath": "src/interface/index.ts",
-          "releaseTag": "Public",
-          "name": "Lang",
-          "typeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 3
-          }
-        },
-        {
-          "kind": "TypeAlias",
-          "canonicalReference": "@hz-9/docs-build!LangPlus:type",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export type LangPlus = "
-            },
-            {
-              "kind": "Content",
-              "text": "`/${"
-            },
-            {
-              "kind": "Reference",
-              "text": "Lang",
-              "canonicalReference": "@hz-9/docs-build!Lang:type"
-            },
-            {
-              "kind": "Content",
-              "text": "}/`"
-            },
-            {
-              "kind": "Content",
-              "text": ";"
-            }
-          ],
-          "fileUrlPath": "src/interface/index.ts",
-          "releaseTag": "Public",
-          "name": "LangPlus",
-          "typeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 4
-          }
-        },
-        {
-          "kind": "Class",
-          "canonicalReference": "@hz-9/docs-build!MultiDocsBuild:class",
-          "docComment": "/**\n * A build class that utilizes the docs build result.\n *\n * In rush.js project.\n *\n * @public\n */\n",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export declare class MultiDocsBuild extends "
-            },
-            {
-              "kind": "Reference",
-              "text": "SingleDocsBuild",
-              "canonicalReference": "@hz-9/docs-build!SingleDocsBuild:class"
+              "text": "NavItemOptions",
+              "canonicalReference": "@hz-9/docs-build!NavItemOptions:interface"
             },
             {
               "kind": "Content",
               "text": " "
             }
           ],
-          "fileUrlPath": "src/core/multi.docs-build..ts",
+          "fileUrlPath": "src/interface/vuepress-theme-hope.ts",
           "releaseTag": "Public",
-          "isAbstract": false,
-          "name": "MultiDocsBuild",
+          "name": "SidebarStructureItem",
           "preserveMemberOrder": false,
           "members": [
             {
-              "kind": "Method",
-              "canonicalReference": "@hz-9/docs-build!MultiDocsBuild#build:member(1)",
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!SidebarStructureItem#children:member",
               "docComment": "",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "build(options: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ICommandOptions",
-                  "canonicalReference": "@hz-9/docs-build!ICommandOptions:interface"
+                  "text": "children: "
                 },
                 {
                   "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Promise",
-                  "canonicalReference": "!Promise:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<void>"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 5
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "options",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "build"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "@hz-9/docs-build!MultiDocsBuild.build:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "static build(optionsBase: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ICommandOptions",
-                  "canonicalReference": "@hz-9/docs-build!ICommandOptions:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Promise",
-                  "canonicalReference": "!Promise:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<"
-                },
-                {
-                  "kind": "Reference",
-                  "text": "MultiDocsBuild",
-                  "canonicalReference": "@hz-9/docs-build!MultiDocsBuild:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": true,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 7
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "optionsBase",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "build"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "@hz-9/docs-build!MultiDocsBuild#readRushProjects:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "protected readRushProjects(options: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ICommandOptions",
-                  "canonicalReference": "@hz-9/docs-build!ICommandOptions:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "IRushProject",
-                  "canonicalReference": "@hz-9/docs-build!IRushProject:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "[]"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 5
-              },
-              "releaseTag": "Public",
-              "isProtected": true,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "options",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "readRushProjects"
-            }
-          ],
-          "extendsTokenRange": {
-            "startIndex": 1,
-            "endIndex": 2
-          },
-          "implementsTokenRanges": []
-        },
-        {
-          "kind": "Class",
-          "canonicalReference": "@hz-9/docs-build!SingleDocsBuild:class",
-          "docComment": "/**\n * A build class that utilizes the docs build result.\n *\n * @public\n */\n",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export declare class SingleDocsBuild "
-            }
-          ],
-          "fileUrlPath": "src/core/single.docs-build.ts",
-          "releaseTag": "Public",
-          "isAbstract": false,
-          "name": "SingleDocsBuild",
-          "preserveMemberOrder": false,
-          "members": [
-            {
-              "kind": "Constructor",
-              "canonicalReference": "@hz-9/docs-build!SingleDocsBuild:constructor(1)",
-              "docComment": "/**\n * Constructs a new instance of the `SingleDocsBuild` class\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "constructor();"
-                }
-              ],
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": []
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "@hz-9/docs-build!SingleDocsBuild#build:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "build(optionsBase: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ICommandOptions",
-                  "canonicalReference": "@hz-9/docs-build!ICommandOptions:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Promise",
-                  "canonicalReference": "!Promise:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<void>"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 5
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "optionsBase",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "build"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "@hz-9/docs-build!SingleDocsBuild.build:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "static build(optionsBase: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ICommandOptions",
-                  "canonicalReference": "@hz-9/docs-build!ICommandOptions:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Promise",
-                  "canonicalReference": "!Promise:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<"
-                },
-                {
-                  "kind": "Reference",
-                  "text": "SingleDocsBuild",
-                  "canonicalReference": "@hz-9/docs-build!SingleDocsBuild:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": true,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 7
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "optionsBase",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "build"
-            },
-            {
-              "kind": "Property",
-              "canonicalReference": "@hz-9/docs-build!SingleDocsBuild#docsItemList:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "protected docsItemList: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "IDocsItem",
-                  "canonicalReference": "@hz-9/docs-build!IDocsItem:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "[]"
+                  "text": "'structure'"
                 },
                 {
                   "kind": "Content",
@@ -1962,769 +2017,20 @@
               "isReadonly": false,
               "isOptional": false,
               "releaseTag": "Public",
-              "name": "docsItemList",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 3
-              },
-              "isStatic": false,
-              "isProtected": true,
-              "isAbstract": false
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "@hz-9/docs-build!SingleDocsBuild#generateAPIDocs:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "protected generateAPIDocs(options: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ICommandOptions",
-                  "canonicalReference": "@hz-9/docs-build!ICommandOptions:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", configOptions: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "IConfigOptions",
-                  "canonicalReference": "@hz-9/docs-build!IConfigOptions:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Promise",
-                  "canonicalReference": "!Promise:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<void>"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 5,
-                "endIndex": 7
-              },
-              "releaseTag": "Public",
-              "isProtected": true,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "options",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "configOptions",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "generateAPIDocs"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "@hz-9/docs-build!SingleDocsBuild#generateSidebarJson:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "protected generateSidebarJson(apiDir: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
-              },
-              "releaseTag": "Public",
-              "isProtected": true,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "apiDir",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "generateSidebarJson"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "@hz-9/docs-build!SingleDocsBuild#getLocales:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "protected getLocales(options: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ICommandOptions",
-                  "canonicalReference": "@hz-9/docs-build!ICommandOptions:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ILocales",
-                  "canonicalReference": "@hz-9/docs-build!ILocales:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
-              },
-              "releaseTag": "Public",
-              "isProtected": true,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "options",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getLocales"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "@hz-9/docs-build!SingleDocsBuild#getNavName:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "protected getNavName(navName: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ILangObj",
-                  "canonicalReference": "@hz-9/docs-build!ILangObj:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", lang: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Lang",
-                  "canonicalReference": "@hz-9/docs-build!Lang:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 5,
-                "endIndex": 6
-              },
-              "releaseTag": "Public",
-              "isProtected": true,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "navName",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "lang",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getNavName"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "@hz-9/docs-build!SingleDocsBuild#moveAndWatch:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "protected moveAndWatch(options: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ICommandOptions",
-                  "canonicalReference": "@hz-9/docs-build!ICommandOptions:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Promise",
-                  "canonicalReference": "!Promise:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<void>"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 5
-              },
-              "releaseTag": "Public",
-              "isProtected": true,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "options",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "moveAndWatch"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "@hz-9/docs-build!SingleDocsBuild#moveVuepressTemp:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "protected moveVuepressTemp(vuepressDirPath: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", renderOptions: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "IRenderOptions",
-                  "canonicalReference": "@hz-9/docs-build!IRenderOptions:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Promise",
-                  "canonicalReference": "!Promise:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<void>"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 5,
-                "endIndex": 7
-              },
-              "releaseTag": "Public",
-              "isProtected": true,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "vuepressDirPath",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "renderOptions",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "moveVuepressTemp"
-            },
-            {
-              "kind": "Property",
-              "canonicalReference": "@hz-9/docs-build!SingleDocsBuild#navbarOptionsGroup:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "protected navbarOptionsGroup: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "INavbarOptionsGroup",
-                  "canonicalReference": "@hz-9/docs-build!INavbarOptionsGroup:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "navbarOptionsGroup",
+              "name": "children",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
-              },
-              "isStatic": false,
-              "isProtected": true,
-              "isAbstract": false
+              }
             },
             {
-              "kind": "Property",
-              "canonicalReference": "@hz-9/docs-build!SingleDocsBuild#needDeleteDirList:member",
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!SidebarStructureItem#collapsible:member",
               "docComment": "",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "protected needDeleteDirList: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string[]"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "needDeleteDirList",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "isStatic": false,
-              "isProtected": true,
-              "isAbstract": false
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "@hz-9/docs-build!SingleDocsBuild#parseAPIExtractorJson:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "protected parseAPIExtractorJson(options: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ICommandOptions",
-                  "canonicalReference": "@hz-9/docs-build!ICommandOptions:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", tempDir: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Promise",
-                  "canonicalReference": "!Promise:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<"
-                },
-                {
-                  "kind": "Reference",
-                  "text": "IConfigOptions",
-                  "canonicalReference": "@hz-9/docs-build!IConfigOptions:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 5,
-                "endIndex": 9
-              },
-              "releaseTag": "Public",
-              "isProtected": true,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "options",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "tempDir",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "parseAPIExtractorJson"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "@hz-9/docs-build!SingleDocsBuild#praseSidebarJson:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "protected praseSidebarJson(dirPath: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", lang: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "keyof "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ILangObj",
-                  "canonicalReference": "@hz-9/docs-build!ILangObj:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ISidebarArrayOptions",
-                  "canonicalReference": "@hz-9/docs-build!ISidebarArrayOptions:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": " | undefined"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 6,
-                "endIndex": 8
-              },
-              "releaseTag": "Public",
-              "isProtected": true,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "dirPath",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "lang",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 5
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "praseSidebarJson"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "@hz-9/docs-build!SingleDocsBuild#runApiDocumenter:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "protected runApiDocumenter(options: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ICommandOptions",
-                  "canonicalReference": "@hz-9/docs-build!ICommandOptions:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", configOptions: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "IConfigOptions",
-                  "canonicalReference": "@hz-9/docs-build!IConfigOptions:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Promise",
-                  "canonicalReference": "!Promise:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<void>"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 5,
-                "endIndex": 7
-              },
-              "releaseTag": "Public",
-              "isProtected": true,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "options",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "configOptions",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "runApiDocumenter"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "@hz-9/docs-build!SingleDocsBuild#runApiExtractor:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "protected runApiExtractor(options: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ICommandOptions",
-                  "canonicalReference": "@hz-9/docs-build!ICommandOptions:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", configOptions: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "IConfigOptions",
-                  "canonicalReference": "@hz-9/docs-build!IConfigOptions:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Promise",
-                  "canonicalReference": "!Promise:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<void>"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 5,
-                "endIndex": 7
-              },
-              "releaseTag": "Public",
-              "isProtected": true,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "options",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "configOptions",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "runApiExtractor"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "@hz-9/docs-build!SingleDocsBuild#scan:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "protected scan(options: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ICommandOptions",
-                  "canonicalReference": "@hz-9/docs-build!ICommandOptions:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", docsParseScheme?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Partial",
-                  "canonicalReference": "!Partial:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<typeof "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "DocsParseScheme",
-                  "canonicalReference": "@hz-9/docs-build!~DocsParseScheme:var"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", inRush?: "
+                  "text": "collapsible?: "
                 },
                 {
                   "kind": "Content",
@@ -2732,82 +2038,161 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "): "
-                },
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "collapsible",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!SidebarStructureItem#link:member",
+              "docComment": "",
+              "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "Promise",
-                  "canonicalReference": "!Promise:interface"
+                  "kind": "Content",
+                  "text": "link?: "
                 },
                 {
                   "kind": "Content",
-                  "text": "<"
-                },
-                {
-                  "kind": "Reference",
-                  "text": "IDocsItem",
-                  "canonicalReference": "@hz-9/docs-build!IDocsItem:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "[]>"
+                  "text": "string"
                 },
                 {
                   "kind": "Content",
                   "text": ";"
                 }
               ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 10,
-                "endIndex": 14
-              },
+              "isReadonly": false,
+              "isOptional": true,
               "releaseTag": "Public",
-              "isProtected": true,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "options",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "docsParseScheme",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 7
-                  },
-                  "isOptional": true
-                },
-                {
-                  "parameterName": "inRush",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 8,
-                    "endIndex": 9
-                  },
-                  "isOptional": true
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "scan"
+              "name": "link",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
             },
             {
-              "kind": "Property",
-              "canonicalReference": "@hz-9/docs-build!SingleDocsBuild#sidebarOptionsGroup:member",
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!SidebarStructureItem#prefix:member",
               "docComment": "",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "protected sidebarOptionsGroup: "
+                  "text": "prefix?: "
                 },
                 {
-                  "kind": "Reference",
-                  "text": "ISidebarOptionsGroup",
-                  "canonicalReference": "@hz-9/docs-build!ISidebarOptionsGroup:type"
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "prefix",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@hz-9/docs-build!SiteOptions:interface",
+          "docComment": "/**\n * 站点元信息\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface SiteOptions "
+            }
+          ],
+          "fileUrlPath": "src/interface/options.ts",
+          "releaseTag": "Public",
+          "name": "SiteOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!SiteOptions#base:member",
+              "docComment": "/**\n * VuePress base 路径，默认 '/'\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "base?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "base",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!SiteOptions#description:member",
+              "docComment": "/**\n * 站点描述，默认从 package.json description 取\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "description?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "description",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!SiteOptions#lang:member",
+              "docComment": "/**\n * 主语言，默认 'en-US'\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "lang: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
                 },
                 {
                   "kind": "Content",
@@ -2817,73 +2202,20 @@
               "isReadonly": false,
               "isOptional": false,
               "releaseTag": "Public",
-              "name": "sidebarOptionsGroup",
+              "name": "lang",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
-              },
-              "isStatic": false,
-              "isProtected": true,
-              "isAbstract": false
+              }
             },
             {
-              "kind": "Method",
-              "canonicalReference": "@hz-9/docs-build!SingleDocsBuild#toAbsolute:member(1)",
-              "docComment": "",
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!SiteOptions#repo:member",
+              "docComment": "/**\n * 仓库地址，默认从 git remote 自动提取\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "protected toAbsolute(options: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ICommandOptions",
-                  "canonicalReference": "@hz-9/docs-build!ICommandOptions:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ICommandOptions",
-                  "canonicalReference": "@hz-9/docs-build!ICommandOptions:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
-              },
-              "releaseTag": "Public",
-              "isProtected": true,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "options",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "toAbsolute"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "@hz-9/docs-build!SingleDocsBuild#transformFileOrDir:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "protected transformFileOrDir(from: "
+                  "text": "repo?: "
                 },
                 {
                   "kind": "Content",
@@ -2891,264 +2223,47 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", to: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", transform?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "(c: string) => string"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
                   "text": ";"
                 }
               ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 7,
-                "endIndex": 8
-              },
+              "isReadonly": false,
+              "isOptional": true,
               "releaseTag": "Public",
-              "isProtected": true,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "from",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "to",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "transform",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 6
-                  },
-                  "isOptional": true
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "transformFileOrDir"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "@hz-9/docs-build!SingleDocsBuild#tryGetGitInfo:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "protected tryGetGitInfo(root: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Promise",
-                  "canonicalReference": "!Promise:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<"
-                },
-                {
-                  "kind": "Reference",
-                  "text": "IGitInfo",
-                  "canonicalReference": "@hz-9/docs-build!IGitInfo:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 7
-              },
-              "releaseTag": "Public",
-              "isProtected": true,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "root",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "tryGetGitInfo"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "@hz-9/docs-build!SingleDocsBuild#vuepressAction:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "protected vuepressAction(docsSpace: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", action?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "VuepressAction",
-                  "canonicalReference": "@hz-9/docs-build!VuepressAction:enum"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Promise",
-                  "canonicalReference": "!Promise:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<void>"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 5,
-                "endIndex": 7
-              },
-              "releaseTag": "Public",
-              "isProtected": true,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "docsSpace",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "action",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  },
-                  "isOptional": true
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "vuepressAction"
-            }
-          ],
-          "implementsTokenRanges": []
-        },
-        {
-          "kind": "Enum",
-          "canonicalReference": "@hz-9/docs-build!VuepressAction:enum",
-          "docComment": "/**\n * Vuepress Operation Types\n *\n * @public\n */\n",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export declare enum VuepressAction "
-            }
-          ],
-          "fileUrlPath": "src/enum/index.ts",
-          "releaseTag": "Public",
-          "name": "VuepressAction",
-          "preserveMemberOrder": false,
-          "members": [
-            {
-              "kind": "EnumMember",
-              "canonicalReference": "@hz-9/docs-build!VuepressAction.Build:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "Build = "
-                },
-                {
-                  "kind": "Content",
-                  "text": "\"build\""
-                }
-              ],
-              "initializerTokenRange": {
+              "name": "repo",
+              "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "name": "Build"
+              }
             },
             {
-              "kind": "EnumMember",
-              "canonicalReference": "@hz-9/docs-build!VuepressAction.Serve:member",
-              "docComment": "",
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!SiteOptions#title:member",
+              "docComment": "/**\n * 站点标题，默认从 package.json name 取\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "Serve = "
+                  "text": "title?: "
                 },
                 {
                   "kind": "Content",
-                  "text": "\"serve\""
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
                 }
               ],
-              "initializerTokenRange": {
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "title",
+              "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "name": "Serve"
+              }
             }
-          ]
+          ],
+          "extendsTokenRanges": []
         }
       ]
     }

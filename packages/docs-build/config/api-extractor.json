@@ -1,0 +1,22 @@
+{
+  "extends": "../../../config/api-extractor.json",
+
+  "mainEntryPointFilePath": "<projectFolder>/lib/index.d.ts",
+
+  "apiReport": {
+    "enabled": true,
+    "reportFileName": "index.api.md",
+    "reportFolder": "<projectFolder>/docs/api",
+    "reportTempFolder": "<projectFolder>/temp/"
+  },
+
+  "docModel": {
+    "enabled": true,
+    "apiJsonFilePath": "<projectFolder>/docs/api/index.api.json"
+  },
+
+  "dtsRollup": {
+    "enabled": true,
+    "untrimmedFilePath": "<projectFolder>/lib/index.d.ts"
+  }
+}

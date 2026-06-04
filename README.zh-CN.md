@@ -2,7 +2,7 @@
 
 一些 'Node.js' 工具库。
 
-[文档](https://hz-9.github.io/tool)
+[文档](https://hz-9.github.io/tool-nx)
 
 ## 快速开始
 

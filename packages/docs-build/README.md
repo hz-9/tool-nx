@@ -1,11 +1,10 @@
 # @hz-9/docs-build
 
-A toos for generate [vuepress-theme-hopo] from typescript project.
+A tool for generating [vuepress-theme-hope](https://theme-hope.vuejs.press/) documentation site from markdown files.
 
 ![NPM Version][npm-version-url] ![NPM License][npm-license-url] ![NPM Downloads][npm-downloads-url] ![Types][types-url]
 <br /> ![Node Version][node-version-url] ![Last Commit][last-commit-url]
 
-[vuepress-theme-hopo]: https://theme-hope.vuejs.press/
 [npm-version-url]: https://badgen.net/npm/v/@hz-9/docs-build
 [npm-license-url]: https://badgen.net/npm/license/@hz-9/docs-build
 [npm-downloads-url]: https://badgen.net/npm/dt/@hz-9/docs-build
@@ -13,68 +12,83 @@ A toos for generate [vuepress-theme-hopo] from typescript project.
 [node-version-url]: https://badgen.net/npm/node/@hz-9/docs-build
 [last-commit-url]: https://badgen.net/github/last-commit/hz-9/tool
 
-[Document](https://hz-9.github.io/tool/guide/docs-build/) | [文档](https://hz-9.github.io/tool/zh-CN/guide/docs-build/)
+[Document](https://hz-9.github.io/tool-nx/guide/docs-build/) | [文档](https://hz-9.github.io/tool-nx/zh-CN/guide/docs-build/)
 
 ## Introduction
 
-`@hz-9/docs-build` will scan the markdown files of a project based on certain rules and compile them into a [vuepress-theme-hopo] website. For logic, please refer to the [Scan Rule](https://hz-9.github.io/tool/guide/docs-build/scan-rule.html).
+`@hz-9/docs-build` scans markdown files based on a configuration file (`docs-build.config.json`) and generates a complete [vuepress-theme-hope](https://theme-hope.vuejs.press/) documentation site. It handles:
+
+- **File copying** — automatically organizes markdown files into multi-language directory structure
+- **Navigation bar & sidebar generation** — generates VuePress-compatible navbar/sidebar configuration
+- **Template rendering** — produces ready-to-use VuePress config files (config.ts, navbar.ts, sidebar.ts, theme.ts)
 
 ## Installation
 
-``` bash
+```bash
 npm install --global @hz-9/docs-build
 ```
 
 ## Usage
 
-Get help:
+### Configuration
 
-``` bash
-docs-build --help
+Create a `docs-build.config.json` in your project root:
+
+```json
+{
+  "baseSourceDir": "docs",
+  "site": {
+    "base": "/",
+    "lang": "en-US",
+    "title": "My Project",
+    "description": "Project description"
+  },
+  "locales": {
+    "languages": ["en-US", "zh-CN"]
+  },
+  "output": "docs/.vuepress",
+  "navigation": {
+    "navbar": [
+      {
+        "text": { "en-US": "Guide", "zh-CN": "指南" },
+        "link": "guide/README.md",
+        "icon": "book"
+      }
+    ],
+    "sidebar": {
+      "/guide/": [
+        {
+          "text": { "en-US": "Getting Started", "zh-CN": "快速开始" },
+          "link": "guide/README.md"
+        }
+      ]
+    }
+  }
+}
 ```
 
-Minimal execution:
+### Run
 
-``` bash
+```bash
 docs-build
 ```
 
-Developer mode:
+### CLI Parameters
 
-``` bash
-docs-build --action serve
+| Parameter | Description |
+|---|---|
+| `-c, --config <path>` | Path to `docs-build.config.json` (default: `./docs-build.config.json`) |
+| `-o, --output <path>` | Override output path from config |
+
+### Programmatic Usage
+
+```typescript
+import { Commander, CommanderOptions, DocsBuild, DocsOptions } from '@hz-9/docs-build'
+
+// Load and validate config
+const options = DocsOptions.load('./docs-build.config.json')
+
+// Run build
+const result = await DocsBuild.resolve(options)
+console.log(`Config generated at: ${result.configPath}`)
 ```
-
-> `serve` only listens for changes in file content. If a file that matches the rules is added, the current command needs to be restarted.
-
-Production Env:
-
-``` bash
-docs-build --action build
-```
-
-## Parameters
-
-### -r, --root
-
-The execution path, default is `process.cwd()`. This parameter will affects the reading of the `package.json` file and the resolution of other relative paths.
-
-### -c, --config
-
-The path to `api-extractor.json`. Support absolute path or relative path.
-
-### --docs-space
-
-The space to docs website. If omitted, it is `./docs/.vuepress`.
-
-### --markdown-path
-
-The markdown folder generated using `@microsoft/api-documenter`. If omitted, it is `./docs/.markdowns`.
-
-### -a, --action
-
-Vuepress Action. Support `serve` or `build`.
-
-### --base-url
-
-Vuepress base url. If omitted, it is `/`.

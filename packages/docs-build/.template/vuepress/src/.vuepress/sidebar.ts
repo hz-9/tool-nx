@@ -1,16 +1,16 @@
 import { sidebar } from 'vuepress-theme-hope'
 
+import type { SidebarOptions } from 'vuepress-theme-hope'
+
 /**
  * Icon 从 https://fontawesome.com/search 中获取
  */
 export default (() => {
-  const sidebarPerLang: Record<string, unknown[]> = {{ JSON.stringify(sidebarPerLang, undefined, 2) }}
-
-  const obj: Record<string, unknown[]> = {}
+  const sidebarPerLang: Record<string, SidebarOptions> = {{ JSON.stringify(navigation.sidebar, undefined, 2) }}
 
   Object.keys(sidebarPerLang).forEach((key) => {
-    obj[key] = sidebar(sidebarPerLang[key])
+    sidebarPerLang[key] = sidebar(sidebarPerLang[key])
   })
 
-  return obj
+  return sidebarPerLang
 })()

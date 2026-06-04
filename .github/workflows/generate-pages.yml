@@ -46,11 +46,9 @@ jobs:
         with:
           version: 8
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-      - name: Install @hz-9/docs-build
-        run: npm install -g @hz-9/docs-build
-      - name: Build docs
-        run: docs-build --action build --base-url '/tool/' --lang en-US,zh-CN
+        run: pnpm install
+      - name: Run Generate Script
+        run: base ./scripts/generate-pages.sh
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -58,26 +56,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-      - name: Send email
-        # You may pin to the exact commit or the version.
-        # uses: dawidd6/action-send-mail@2cea9617b09d79a095af21254fbcb7ae95903dde
-        uses: dawidd6/action-send-mail@v3.12.0
-        with:
-          # SMTP server address
-          server_address: smtp.163.com
-          # SMTP server port
-          server_port: 465
-          # Whether this connection use TLS (default is true if server_port is 465)
-          secure: true
-          # Authenticate as this user to SMTP server
-          username: ${{ secrets.ACTION_MAIL_USERNAME }}
-          # Authenticate with this password to SMTP server
-          password: ${{ secrets.ACTION_MAIL_PASSWORD }}
-          # Subject of mail message
-          subject: Publish Github Pages - ${{ github.repository }}
-          # Recipients mail addresses (separated with comma)
-          to: heavenzhen999@163.com
-          # Full name of mail sender (might be with an email address specified in <>)
-          from: '"Github Action" <@hz-9>'
-          # Body of mail message (might be a filename prefixed with file:// to read from)
-          body: 'Publish Github Pages - ${{ github.repository }}'
