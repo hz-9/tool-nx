@@ -1,6 +1,6 @@
 {
   "name": "@hz-9/docs-build",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "A tool for generating vuepress-theme-hope documentation site from markdown files.",
   "keywords": [
     "vuepress",

@@ -1,5 +1,15 @@
 # Change Log - @hz-9/algorithm
 
+## 0.3.1
+
+### Patch Changes
+
+- b718840: build: update vite config for Nx compatibility and fix site URLs
+  - Refactor vite.config.mts to use `__dirname`-based paths for Nx monorepo
+  - Update api-report target to include api-documenter markdown step
+  - Fix homepage and documentation URLs from `tool` to `tool-nx`
+  - Remove empty `.sidebar.json` guide file
+
 ## 0.3.0
 
 ### Minor Changes
