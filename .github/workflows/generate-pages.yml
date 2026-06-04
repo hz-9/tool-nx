@@ -49,6 +49,18 @@ jobs:
         run: pnpm install
       - name: Run Generate Script
         run: bash ./scripts/generate-pages.sh
+      - name: Setup Node for VuePress build
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.20.2'
+      - name: Install VuePress dependencies
+        run: |
+          cd docs/.vuepress
+          npm install
+      - name: Build VuePress static site
+        run: |
+          cd docs/.vuepress
+          npm run docs:build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

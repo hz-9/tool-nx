@@ -73,8 +73,3 @@ echo ""
 echo "=== 4. Building VuePress docs with docs-build ==="
 node packages/docs-build/lib/bin/docs-build.js docs-build.config.json
 
-echo ""
-echo "=== 5. Building VuePress static site ==="
-cd docs/.vuepress
-npm install
-npm run docs:build
