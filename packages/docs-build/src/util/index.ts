@@ -1,5 +1,6 @@
 import * as fs from 'fs-extra'
 import * as path from 'upath'
+import type { PackageJson } from '@npmcli/package-json'
 
 /**
  * @internal
@@ -8,7 +9,7 @@ import * as path from 'upath'
  *
  * @param cwd - The path where package.json exists
  */
-export const readPkg = (cwd?: string): Record<string, unknown> => {
+export const readPkg = (cwd?: string): PackageJson => {
   let searchDir = cwd ? path.resolve(cwd) : __dirname
 
   // 向上搜索 package.json

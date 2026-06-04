@@ -2,7 +2,7 @@
 
 Some 'Node.js' tool library.
 
-[Document](https://hz-9.github.io/tool)
+[Document](https://hz-9.github.io/tool-nx)
 
 ## Quick Start
 

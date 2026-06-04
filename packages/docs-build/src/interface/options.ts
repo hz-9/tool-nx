@@ -1,53 +1,4 @@
-/**
- * @public
- *
- * 导航栏项目，text 支持多语言映射
- */
-export interface NavbarItem {
-  /**
-   * 导航文本，支持多语言映射
-   * 如 'Guide' 或 { 'en-US': 'Guide', 'zh-CN': '指南' }
-   */
-  text: string | Record<string, string>
-
-  /** 源 markdown 文件或目录路径，如 'docs/guide/README.md' */
-  link: string
-
-  /** 图标，从 https://fontawesome.com/search 获取 */
-  icon?: string
-
-  /**
-   * 子导航，用于分组下拉
-   */
-  children?: NavbarItem[]
-}
-
-/**
- * @public
- *
- * 侧边栏项目
- */
-export interface SidebarItem {
-  /**
-   * 导航文本，支持多语言映射
-   */
-  text: string | Record<string, string>
-
-  /** 源 markdown 文件路径，如 'docs/guide/README.md' */
-  link: string
-
-  /** 图标 */
-  icon?: string
-
-  /** 是否可折叠 */
-  collapsible?: boolean
-
-  /** 是否默认展开 */
-  expanded?: boolean
-
-  /** 子侧边栏项目 */
-  children?: SidebarItem[]
-}
+import { NavbarOptions, SidebarOptions } from './vuepress-theme-hope'
 
 /**
  * @public
@@ -56,10 +7,10 @@ export interface SidebarItem {
  */
 export interface NavigationOptions {
   /** 导航栏列表 */
-  navbar: NavbarItem[]
+  navbar: NavbarOptions
 
   /** 侧边栏，key 为路由路径前缀，如 '/guide/' */
-  sidebar: Record<string, SidebarItem[]>
+  sidebar: SidebarOptions
 }
 
 /**
@@ -75,7 +26,7 @@ export interface SiteOptions {
   description?: string
 
   /** VuePress base 路径，默认 '/' */
-  base: string
+  base?: string
 
   /** 主语言，默认 'en-US' */
   lang: string
@@ -107,7 +58,7 @@ export interface LocalesOptions {
 /**
  * @public
  *
- * @hz-9/docs-build 完整配置选项
+ * \@hz-9/docs-build 完整配置选项
  */
 export interface DocsBuildOptions {
   /**
@@ -129,7 +80,7 @@ export interface DocsBuildOptions {
   locales?: LocalesOptions
 
   /** 输出目录，默认 './docs/.vuepress' */
-  output: string
+  output?: string
 }
 
 /**

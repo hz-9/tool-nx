@@ -4,257 +4,235 @@
 
 ```ts
 
-import { OptionValues } from 'commander';
-import { Package } from 'normalize-package-data';
+// @public
+export interface AppearanceOptions {
+    styleDir?: string;
+}
 
 // @public
-export class Commander {
+export interface AutoLinkOptions extends NavItemOptions {
     // (undocumented)
-    static inRush(options: ICommandOptions): boolean;
-    // (undocumented)
-    static parse(): Promise<ICommandOptions>;
-    // @internal
-    static _parseCommandOptions(options: OptionValues): ICommandOptions;
-}
-
-// Warning: (ae-internal-missing-underscore) The name "IApiDocVersionFile" should be prefixed with an underscore because the declaration is marked as @internal
-//
-// @internal
-export interface IApiDocVersionFile {
-    // (undocumented)
-    hash: string;
-}
-
-// Warning: (ae-internal-missing-underscore) The name "IAutoLinkOptions" should be prefixed with an underscore because the declaration is marked as @internal
-//
-// @internal
-export interface IAutoLinkOptions extends INavItemOptions {
     activeMatch?: string;
-    exact?: boolean;
+    // (undocumented)
     link: string;
+    // (undocumented)
     rel?: string;
+    // (undocumented)
     target?: string;
 }
 
 // @public
-export interface ICommandOptions {
-    action?: VuepressAction;
-    baseUrl: string;
-    config?: string;
-    docsSpace: string;
-    lang: Lang[];
-    markdownPath: string;
-    root: string;
+export class Commander {
+    // (undocumented)
+    static parse(): CommanderOptions;
 }
 
 // @public
-export interface IConfigOptions {
-    apiDocVersionFilepath: string;
-    apiJsonFilePath: string;
-    apiPath: string;
+export interface CommanderOptions {
+    config: string;
+    output?: string;
+}
+
+// @public
+export class DocsBuild {
+    constructor(options: DocsBuildOptions);
+    static resolve(options: DocsBuildOptions): Promise<DocsBuildResult>;
+    resolve(): Promise<DocsBuildResult>;
+    // (undocumented)
+    transformNavbarOptions(options: NavbarOptions, lang: string): NavbarOptions;
+    // (undocumented)
+    transformSidebarOptions(options: SidebarOptions, lang: string): SidebarOptions;
+}
+
+// @public
+export interface DocsBuildOptions {
+    appearance?: AppearanceOptions;
+    baseSourceDir: string;
+    locales?: LocalesOptions;
+    navigation: NavigationOptions;
+    output?: string;
+    site: SiteOptions;
+}
+
+// @public
+export interface DocsBuildResult {
     configPath: string;
-    entryPath: string;
-    rigPackage?: string;
+    outputPath: string;
 }
 
 // @public
-export interface IDocsItem {
-    // (undocumented)
-    baseFilepath: string;
-    // (undocumented)
-    focusFilepath: string;
-    // (undocumented)
-    isDir: boolean;
-    transform?: (s: string) => string;
+export class DocsOptions {
+    static load(configPath: string): DocsBuildOptions;
+    static validateConfig(config: unknown): asserts config is DocsBuildOptions;
 }
 
 // @public
-export interface IDocsParseSchemeItem {
-    isDir?: true;
-    navName: ILangObj;
-    navPath: string;
-    parsePath: string[];
-    transform?: (s: string) => string;
+export const IGNORE_PATTERNS: string[];
+
+// @public
+export interface LocalesOptions {
+    languages: string[];
 }
 
 // @public (undocumented)
-export interface IGitInfo {
+export type NavbarGroupOptions = NavGroup<NavbarLinkOptions | NavGroup<NavbarLinkOptions>>;
+
+// @public (undocumented)
+export type NavbarLinkOptions = AutoLinkOptions | string;
+
+// @public (undocumented)
+export type NavbarOptions = (NavbarLinkOptions | NavbarGroupOptions)[];
+
+// @public
+export interface NavGroup<Child> extends NavItemOptions {
     // (undocumented)
-    gitUrl?: string;
+    children: Child[];
+    // (undocumented)
+    link?: string;
+    // (undocumented)
+    prefix?: string;
 }
 
-// @public (undocumented)
-export interface ILangObj {
-    // (undocumented)
-    'en-US': string;
-    // (undocumented)
-    'zh-CN': string;
+// @public
+export interface NavigationOptions {
+    navbar: NavbarOptions;
+    sidebar: SidebarOptions;
 }
 
-// @public (undocumented)
-export type ILocales = {
-    '/': {
-        lang: Lang;
-    };
-} & {
-    [K in LangPlus]?: {
-        lang: Lang;
-    };
-};
-
-// Warning: (ae-forgotten-export) The symbol "INavGroup" needs to be exported by the entry point index.d.ts
-//
-// @public (undocumented)
-export type INavbarGroupOptions = INavGroup<INavbarLinkOptions | INavGroup<INavbarLinkOptions> | string>;
-
-// Warning: (ae-incompatible-release-tags) The symbol "INavbarLinkOptions" is marked as @public, but its signature references "IAutoLinkOptions" which is marked as @internal
-//
-// @public (undocumented)
-export type INavbarLinkOptions = IAutoLinkOptions;
-
-// @public (undocumented)
-export type INavbarOptions = (INavbarLinkOptions | INavbarGroupOptions | string)[];
-
-// @public (undocumented)
-export type INavbarOptionsGroup = {
-    '/': INavbarOptions;
-} & {
-    [K in LangPlus]?: INavbarOptions;
-};
-
-// Warning: (ae-internal-missing-underscore) The name "INavItemOptions" should be prefixed with an underscore because the declaration is marked as @internal
-//
-// @internal
-export interface INavItemOptions {
+// @public
+export interface NavItemOptions {
+    // (undocumented)
     ariaLabel?: string;
+    // (undocumented)
     icon?: string;
-    text: string;
+    // (undocumented)
+    text: string | Record<string, string>;
 }
 
-// Warning: (ae-internal-missing-underscore) The name "IRenderOptions" should be prefixed with an underscore because the declaration is marked as @internal
-//
-// @internal
-export interface IRenderOptions {
-    // (undocumented)
-    gitInfo: IGitInfo;
-    // (undocumented)
-    locales: ILocales;
-    // (undocumented)
-    options: ICommandOptions;
-    packageInfo: Package;
-}
-
-// Warning: (ae-internal-missing-underscore) The name "IRushProject" should be prefixed with an underscore because the declaration is marked as @internal
-//
-// @internal
-export interface IRushProject {
-    // (undocumented)
-    packageName: string;
-    // (undocumented)
-    projectFolder: string;
-    // (undocumented)
-    shouldPublish?: boolean;
-}
-
-// Warning: (ae-forgotten-export) The symbol "ISidebarItemOptions" needs to be exported by the entry point index.d.ts
+// Warning: (ae-forgotten-export) The symbol "SidebarItem" needs to be exported by the entry point index.d.ts
 //
 // @public (undocumented)
-export type ISidebarArrayOptions = ISidebarItemOptions[];
+export type SidebarArrayOptions = SidebarItem[];
 
-// Warning: (ae-forgotten-export) The symbol "ISidebarLinkItem" needs to be exported by the entry point index.d.ts
-// Warning: (ae-forgotten-export) The symbol "ISidebarGroupItem" needs to be exported by the entry point index.d.ts
+// Warning: (ae-internal-missing-underscore) The name "SidebarDirInfo" should be prefixed with an underscore because the declaration is marked as @internal
 //
-// @public (undocumented)
-export type ISidebarItem = ISidebarLinkItem | ISidebarGroupItem | ISidebarItemOptions;
-
-// @public (undocumented)
-export type ISidebarObjectOptions = Record<string, ISidebarArrayOptions | 'structure' | false>;
-
-// @public (undocumented)
-export type ISidebarOptions = ISidebarArrayOptions | ISidebarObjectOptions | 'structure' | false;
-
-// @public (undocumented)
-export type ISidebarOptionsGroup = {
-    '/': ISidebarObjectOptions;
-} & {
-    [K in LangPlus]?: ISidebarObjectOptions;
-};
-
-// @public (undocumented)
-export type Lang = keyof ILangObj;
-
-// @public (undocumented)
-export type LangPlus = `/${Lang}/`;
-
-// @public
-export class MultiDocsBuild extends SingleDocsBuild {
+// @internal (undocumented)
+export interface SidebarDirInfo {
     // (undocumented)
-    static build(optionsBase: ICommandOptions): Promise<MultiDocsBuild>;
+    children: SidebarInfo[];
     // (undocumented)
-    build(options: ICommandOptions): Promise<void>;
-    // Warning: (ae-incompatible-release-tags) The symbol "readRushProjects" is marked as @public, but its signature references "IRushProject" which is marked as @internal
+    dirname: string;
+    // Warning: (ae-forgotten-export) The symbol "ThemeNormalPageFrontmatter" needs to be exported by the entry point index.d.ts
     //
     // (undocumented)
-    protected readRushProjects(options: ICommandOptions): IRushProject[];
+    frontmatter: ThemeNormalPageFrontmatter | null;
+    // (undocumented)
+    groupInfo: {
+        icon?: string;
+        expanded?: boolean;
+        collapsible?: boolean;
+        link?: string;
+    };
+    // (undocumented)
+    order: number | null;
+    // Warning: (ae-forgotten-export) The symbol "ThemePageData" needs to be exported by the entry point index.d.ts
+    //
+    // (undocumented)
+    pageData: ThemePageData | null;
+    // (undocumented)
+    title: string;
+    // (undocumented)
+    type: 'dir';
+}
+
+// Warning: (ae-internal-missing-underscore) The name "SidebarFileInfo" should be prefixed with an underscore because the declaration is marked as @internal
+//
+// @internal (undocumented)
+export interface SidebarFileInfo {
+    // (undocumented)
+    filename: string;
+    // (undocumented)
+    frontmatter: ThemeNormalPageFrontmatter;
+    // (undocumented)
+    order: number | null;
+    // (undocumented)
+    pageData: ThemePageData;
+    // (undocumented)
+    path?: string | null;
+    // (undocumented)
+    title: string;
+    // (undocumented)
+    type: 'file';
+}
+
+// @public (undocumented)
+export interface SidebarGroupItem extends NavItemOptions {
+    // (undocumented)
+    children: (SidebarPageItem | SidebarGroupItem | SidebarStructureItem | string)[];
+    // (undocumented)
+    collapsible?: boolean;
+    // (undocumented)
+    link?: string;
+    // (undocumented)
+    prefix?: string;
+}
+
+// Warning: (ae-internal-missing-underscore) The name "SidebarInfo" should be prefixed with an underscore because the declaration is marked as @internal
+//
+// @internal (undocumented)
+export type SidebarInfo = SidebarFileInfo | SidebarDirInfo;
+
+// Warning: (ae-internal-missing-underscore) The name "SidebarLocaleOptions" should be prefixed with an underscore because the declaration is marked as @internal
+//
+// @internal (undocumented)
+export interface SidebarLocaleOptions {
+    // (undocumented)
+    sidebar?: SidebarOptions;
+}
+
+// @public (undocumented)
+export type SidebarObjectOptions = Record<string, SidebarArrayOptions | 'structure' | 'heading' | false>;
+
+// @public (undocumented)
+export type SidebarOptions = SidebarArrayOptions | SidebarObjectOptions | 'structure' | 'heading' | false;
+
+// @public (undocumented)
+export type SidebarPageItem = AutoLinkOptions;
+
+// Warning: (ae-internal-missing-underscore) The name "SidebarSorter" should be prefixed with an underscore because the declaration is marked as @internal
+//
+// @internal (undocumented)
+export type SidebarSorter = SidebarSorterFunction | SidebarSorterKeyword | (SidebarSorterKeyword | SidebarSorterFunction)[];
+
+// Warning: (ae-internal-missing-underscore) The name "SidebarSorterFunction" should be prefixed with an underscore because the declaration is marked as @internal
+//
+// @internal (undocumented)
+export type SidebarSorterFunction = (infoA: SidebarInfo, infoB: SidebarInfo) => number;
+
+// Warning: (ae-internal-missing-underscore) The name "SidebarSorterKeyword" should be prefixed with an underscore because the declaration is marked as @internal
+//
+// @internal (undocumented)
+export type SidebarSorterKeyword = 'readme' | 'order' | 'date' | 'date-desc' | 'filename' | 'title';
+
+// @public (undocumented)
+export interface SidebarStructureItem extends NavItemOptions {
+    // (undocumented)
+    children: 'structure';
+    // (undocumented)
+    collapsible?: boolean;
+    // (undocumented)
+    link?: string;
+    // (undocumented)
+    prefix?: string;
 }
 
 // @public
-export class SingleDocsBuild {
-    constructor();
-    // (undocumented)
-    static build(optionsBase: ICommandOptions): Promise<SingleDocsBuild>;
-    // (undocumented)
-    build(optionsBase: ICommandOptions): Promise<void>;
-    // (undocumented)
-    protected docsItemList: IDocsItem[];
-    // (undocumented)
-    protected generateAPIDocs(options: ICommandOptions, configOptions: IConfigOptions): Promise<void>;
-    // (undocumented)
-    protected generateSidebarJson(apiDir: string): void;
-    // (undocumented)
-    protected getLocales(options: ICommandOptions): ILocales;
-    // (undocumented)
-    protected getNavName(navName: ILangObj, lang: Lang): string;
-    // (undocumented)
-    protected moveAndWatch(options: ICommandOptions): Promise<void>;
-    // Warning: (ae-incompatible-release-tags) The symbol "moveVuepressTemp" is marked as @public, but its signature references "IRenderOptions" which is marked as @internal
-    //
-    // (undocumented)
-    protected moveVuepressTemp(vuepressDirPath: string, renderOptions: IRenderOptions): Promise<void>;
-    // (undocumented)
-    protected navbarOptionsGroup: INavbarOptionsGroup;
-    // (undocumented)
-    protected needDeleteDirList: string[];
-    // (undocumented)
-    protected parseAPIExtractorJson(options: ICommandOptions, tempDir: string): Promise<IConfigOptions>;
-    // (undocumented)
-    protected praseSidebarJson(dirPath: string, lang: keyof ILangObj): ISidebarArrayOptions | undefined;
-    // (undocumented)
-    protected runApiDocumenter(options: ICommandOptions, configOptions: IConfigOptions): Promise<void>;
-    // (undocumented)
-    protected runApiExtractor(options: ICommandOptions, configOptions: IConfigOptions): Promise<void>;
-    // Warning: (ae-forgotten-export) The symbol "DocsParseScheme" needs to be exported by the entry point index.d.ts
-    //
-    // (undocumented)
-    protected scan(options: ICommandOptions, docsParseScheme?: Partial<typeof DocsParseScheme>, inRush?: boolean): Promise<IDocsItem[]>;
-    // (undocumented)
-    protected sidebarOptionsGroup: ISidebarOptionsGroup;
-    // (undocumented)
-    protected toAbsolute(options: ICommandOptions): ICommandOptions;
-    // (undocumented)
-    protected transformFileOrDir(from: string, to: string, transform?: (c: string) => string): void;
-    // (undocumented)
-    protected tryGetGitInfo(root: string): Promise<IGitInfo>;
-    // (undocumented)
-    protected vuepressAction(docsSpace: string, action?: VuepressAction): Promise<void>;
-}
-
-// @public
-export enum VuepressAction {
-    // (undocumented)
-    Build = "build",
-    // (undocumented)
-    Serve = "serve"
+export interface SiteOptions {
+    base?: string;
+    description?: string;
+    lang: string;
+    repo?: string;
+    title?: string;
 }
 
 // (No @packageDocumentation comment for this package)
