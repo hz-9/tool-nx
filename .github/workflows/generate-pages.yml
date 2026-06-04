@@ -48,7 +48,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Run Generate Script
-        run: base ./scripts/generate-pages.sh
+        run: bash ./scripts/generate-pages.sh
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
