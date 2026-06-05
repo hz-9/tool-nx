@@ -7,11 +7,11 @@
   ],
   "homepage": "https://hz-9.github.io/tool-nx/guide/algorithm",
   "bugs": {
-    "url": "https://github.com/hz-9/tool/issues"
+    "url": "https://github.com/hz-9/tool-nx/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hz-9/tool.git",
+    "url": "https://github.com/hz-9/tool-nx.git",
     "directory": "packages/algorithm"
   },
   "license": "MIT",

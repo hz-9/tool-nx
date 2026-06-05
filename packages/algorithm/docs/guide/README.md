@@ -10,7 +10,7 @@ A JavaScript algorithm base class library.
 [npm-downloads-url]: https://badgen.net/npm/dt/@hz-9/algorithm
 [types-url]: https://badgen.net/npm/types/@hz-9/algorithm
 [node-version-url]: https://badgen.net/npm/node/@hz-9/algorithm
-[last-commit-url]: https://badgen.net/github/last-commit/hz-9/tool
+[last-commit-url]: https://badgen.net/github/last-commit/hz-9/tool-nx
 
 ## Introduction
 

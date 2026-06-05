@@ -2,7 +2,7 @@
 
 The `@hz-9/*` package series looks forward to the attention and use of developers, whether it's for reviewing the source code or using it in projects. We welcome developers to provide feedback to help make the `@hz-9/*` series better.
 
-[Github issues](https://github.com/hz-9/tool/issues)
+[Github issues](https://github.com/hz-9/tool-nx/issues)
 
 In mainland China, there is a synchronized version of `tool` on Gitee, where developers can also provide feedback.
 

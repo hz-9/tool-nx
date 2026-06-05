@@ -59,7 +59,6 @@ jspm_packages/
 .DS_Store
 
 # Docs
-
 /docs/guide
 /docs/api
 /docs/changelog

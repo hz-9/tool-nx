@@ -1,17 +1,17 @@
 # @hz-9/docs-build
 
-A toos for generate [vuepress-theme-hopo] from typescript project.
+A tool for generating [vuepress-theme-hope] from typescript project.
 
 ![NPM Version][npm-version-url] ![NPM License][npm-license-url] ![NPM Downloads][npm-downloads-url] ![Types][types-url]
 <br /> ![Node Version][node-version-url] ![Last Commit][last-commit-url]
 
-[vuepress-theme-hopo]: https://theme-hope.vuejs.press/
+[vuepress-theme-hope]: https://theme-hope.vuejs.press/
 [npm-version-url]: https://badgen.net/npm/v/@hz-9/docs-build
 [npm-license-url]: https://badgen.net/npm/license/@hz-9/docs-build
 [npm-downloads-url]: https://badgen.net/npm/dt/@hz-9/docs-build
 [types-url]: https://badgen.net/npm/types/@hz-9/docs-build
 [node-version-url]: https://badgen.net/npm/node/@hz-9/docs-build
-[last-commit-url]: https://badgen.net/github/last-commit/hz-9/tool
+[last-commit-url]: https://badgen.net/github/last-commit/hz-9/tool-nx
 
 ## Introduction
 
