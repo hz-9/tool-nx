@@ -1,5 +1,11 @@
 # Change Log - @hz-9/docs-build
 
+## 0.9.1
+
+### Patch Changes
+
+- 41d526c: fix: correct GitHub repository URL and fix typo in documentation (theme-hopo → theme-hope)
+
 ## 0.9.0
 
 ### Minor Changes

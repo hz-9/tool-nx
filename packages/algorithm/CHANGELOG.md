@@ -1,5 +1,11 @@
 # Change Log - @hz-9/algorithm
 
+## 0.3.2
+
+### Patch Changes
+
+- 41d526c: fix: correct GitHub repository URL from hz-9/tool to hz-9/tool-nx
+
 ## 0.3.1
 
 ### Patch Changes
