@@ -1,0 +1,9 @@
+schema_version: 1
+module_path: algorithm/hashmap
+title: 哈希表算法实现
+scope:
+    - packages/algorithm/src/hashmap/
+source_files: []
+depends_on: []
+related_to:
+    - path: algorithm/linked_list

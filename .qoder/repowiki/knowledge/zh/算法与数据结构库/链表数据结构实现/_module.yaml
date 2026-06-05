@@ -1,0 +1,9 @@
+schema_version: 1
+module_path: algorithm/linked_list
+title: 链表数据结构实现
+scope:
+    - packages/algorithm/src/linked-list/
+source_files: []
+depends_on: []
+related_to:
+    - path: algorithm/hashmap

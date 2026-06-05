@@ -1,0 +1,8 @@
+schema_version: 1
+module_path: algorithm
+title: 算法与数据结构库
+scope:
+    - packages/algorithm/
+source_files: []
+depends_on: []
+related_to: []

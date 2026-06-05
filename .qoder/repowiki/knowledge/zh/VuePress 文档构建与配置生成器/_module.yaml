@@ -1,0 +1,8 @@
+schema_version: 1
+module_path: docs_build
+title: VuePress 文档构建与配置生成器
+scope:
+    - packages/docs-build/
+source_files: []
+depends_on: []
+related_to: []

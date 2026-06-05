@@ -1,0 +1,9 @@
+schema_version: 1
+module_path: algorithm/sort
+title: 通用排序算法库
+scope:
+    - packages/algorithm/src/sort/
+source_files: []
+depends_on: []
+related_to:
+    - path: algorithm/search

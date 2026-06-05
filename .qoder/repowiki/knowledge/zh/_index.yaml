@@ -1,0 +1,164 @@
+# 知识卡导出索引文件
+schema_version: 1
+locale: zh-CN
+branch: master
+exported_at: "2026-06-05T17:03:25Z"
+modules:
+    "":
+        dir_name: HZ-9 工具库与文档工程化平台
+        title: HZ-9 工具库与文档工程化平台
+        scope:
+            - README.md
+            - README.zh-CN.md
+            - .gitignore
+            - .gitattributes
+            - .eslintrc.js
+            - .eslintignore
+            - .prettierrc.js
+            - .prettierignore
+            - .markdownlint.json
+            - commitlint.config.js
+            - nx.json
+            - package.json
+            - pnpm-lock.yaml
+            - pnpm-workspace.yaml
+            - docs-build.config.json
+            - scripts/
+            - config/
+            - docs/
+            - .nvmrc
+            - LICENSE
+        source_files: []
+        children: []
+        depends_on: []
+        related_to: []
+    algorithm:
+        dir_name: 算法与数据结构库
+        title: 算法与数据结构库
+        scope:
+            - packages/algorithm/
+        source_files: []
+        children:
+            - algorithm/queue
+            - algorithm/linked_list
+            - algorithm/heap
+            - algorithm/sort
+            - algorithm/search
+            - algorithm/binary_tree
+            - algorithm/algorithm_core
+            - algorithm/stack
+            - algorithm/hashmap
+            - algorithm/graph
+        depends_on: []
+        related_to: []
+    algorithm/algorithm_core:
+        dir_name: 基础算法与集合工具库
+        title: 基础算法与集合工具库
+        scope:
+            - packages/algorithm/src/_base/
+            - packages/algorithm/src/types/
+            - packages/algorithm/src/array/
+            - packages/algorithm/src/random/
+            - packages/algorithm/src/set/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to: []
+    algorithm/binary_tree:
+        dir_name: 二叉搜索树与自平衡树实现
+        title: 二叉搜索树与自平衡树实现
+        scope:
+            - packages/algorithm/src/binary-tree/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: algorithm/heap
+    algorithm/graph:
+        dir_name: 图数据结构与遍历算法
+        title: 图数据结构与遍历算法
+        scope:
+            - packages/algorithm/src/graph/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to: []
+    algorithm/hashmap:
+        dir_name: 哈希表算法实现
+        title: 哈希表算法实现
+        scope:
+            - packages/algorithm/src/hashmap/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: algorithm/linked_list
+    algorithm/heap:
+        dir_name: 堆数据结构实现
+        title: 堆数据结构实现
+        scope:
+            - packages/algorithm/src/heap/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: algorithm/binary_tree
+    algorithm/linked_list:
+        dir_name: 链表数据结构实现
+        title: 链表数据结构实现
+        scope:
+            - packages/algorithm/src/linked-list/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: algorithm/hashmap
+    algorithm/queue:
+        dir_name: 队列与双向队列数据结构实现
+        title: 队列与双向队列数据结构实现
+        scope:
+            - packages/algorithm/src/queue/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: algorithm/stack
+    algorithm/search:
+        dir_name: 搜索算法集合
+        title: 搜索算法集合
+        scope:
+            - packages/algorithm/src/search/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: algorithm/sort
+    algorithm/sort:
+        dir_name: 通用排序算法库
+        title: 通用排序算法库
+        scope:
+            - packages/algorithm/src/sort/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: algorithm/search
+    algorithm/stack:
+        dir_name: 栈数据结构实现
+        title: 栈数据结构实现
+        scope:
+            - packages/algorithm/src/stack/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: algorithm/queue
+    docs_build:
+        dir_name: VuePress 文档构建与配置生成器
+        title: VuePress 文档构建与配置生成器
+        scope:
+            - packages/docs-build/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to: []

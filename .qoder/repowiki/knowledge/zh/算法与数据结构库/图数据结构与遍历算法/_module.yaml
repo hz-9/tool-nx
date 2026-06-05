@@ -1,0 +1,8 @@
+schema_version: 1
+module_path: algorithm/graph
+title: 图数据结构与遍历算法
+scope:
+    - packages/algorithm/src/graph/
+source_files: []
+depends_on: []
+related_to: []

@@ -1,0 +1,9 @@
+schema_version: 1
+module_path: algorithm/binary_tree
+title: 二叉搜索树与自平衡树实现
+scope:
+    - packages/algorithm/src/binary-tree/
+source_files: []
+depends_on: []
+related_to:
+    - path: algorithm/heap

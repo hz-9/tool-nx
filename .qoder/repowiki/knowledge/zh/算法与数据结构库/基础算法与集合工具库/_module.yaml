@@ -1,0 +1,12 @@
+schema_version: 1
+module_path: algorithm/algorithm_core
+title: 基础算法与集合工具库
+scope:
+    - packages/algorithm/src/_base/
+    - packages/algorithm/src/types/
+    - packages/algorithm/src/array/
+    - packages/algorithm/src/random/
+    - packages/algorithm/src/set/
+source_files: []
+depends_on: []
+related_to: []
