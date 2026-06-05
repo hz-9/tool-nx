@@ -1,21 +1,21 @@
 # @hz-9/docs-build
 
-一个用于从 TypeScript 项目生成 [vuepress-theme-hopo] 的工具。
+一个用于从 TypeScript 项目生成 [vuepress-theme-hope] 的工具。
 
 ![NPM 版本][npm-version-url] ![NPM 许可证][npm-license-url] ![NPM 下载量][npm-downloads-url] ![类型][types-url]
 <br /> ![Node 版本][node-version-url] ![最后提交][last-commit-url]
 
-[vuepress-theme-hopo]: https://theme-hope.vuejs.press/
+[vuepress-theme-hope]: https://theme-hope.vuejs.press/
 [npm-version-url]: https://badgen.net/npm/v/@hz-9/docs-build
 [npm-license-url]: https://badgen.net/npm/license/@hz-9/docs-build
 [npm-downloads-url]: https://badgen.net/npm/dt/@hz-9/docs-build
 [types-url]: https://badgen.net/npm/types/@hz-9/docs-build
 [node-version-url]: https://badgen.net/npm/node/@hz-9/docs-build
-[last-commit-url]: https://badgen.net/github/last-commit/hz-9/tool
+[last-commit-url]: https://badgen.net/github/last-commit/hz-9/tool-nx
 
 ## 简介
 
-`@hz-9/docs-build` 将根据特定规则扫描项目的 markdown 文件，并将其编译成 [vuepress-theme-hopo] 网站。有关逻辑，请参阅[扫描规则](./scan-rule)。
+`@hz-9/docs-build` 将根据特定规则扫描项目的 markdown 文件，并将其编译成 [vuepress-theme-hope] 网站。有关逻辑，请参阅[扫描规则](./scan-rule)。
 
 ## 安装
 

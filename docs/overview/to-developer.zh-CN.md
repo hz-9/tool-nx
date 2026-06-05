@@ -2,7 +2,7 @@
 
 `@hz-9/*` 系列包期望开发者的关注及使用，无论是查看源码还是在项目中使用。我们欢迎开发者提供反馈，以帮助使 `@hz-9/*` 系列变得更好。
 
-[Github issues](https://github.com/hz-9/tool/issues)
+[Github issues](https://github.com/hz-9/tool-nx/issues)
 
 在中国大陆，Gitee 中，存在了一份 `tool` 的同步版本，开发者也可以在此处提供反馈。
 

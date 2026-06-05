@@ -1,4 +1,4 @@
-# Sample workflow for building and deploying a Nuxt site to GitHub Pages
+# Sample workflow for building and deploying a VuePress site to GitHub Pages
 #
 name: Generate website with @hz-9/docs-build
 
