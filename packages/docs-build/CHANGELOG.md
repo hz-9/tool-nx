@@ -1,5 +1,11 @@
 # Change Log - @hz-9/docs-build
 
+## 0.10.0
+
+### Minor Changes
+
+- 925c7b5: feat: add CLI logging system with logo, ORA spinners and file copy statistics
+
 ## 0.9.1
 
 ### Patch Changes
