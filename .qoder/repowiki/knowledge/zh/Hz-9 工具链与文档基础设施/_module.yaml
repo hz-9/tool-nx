@@ -1,0 +1,24 @@
+schema_version: 1
+module_path: ""
+title: Hz-9 工具链与文档基础设施
+scope:
+    - .eslintignore
+    - .eslintrc.js
+    - .gitattributes
+    - .gitignore
+    - .markdownlint.json
+    - .nvmrc
+    - .prettierignore
+    - .prettierrc.js
+    - LICENSE
+    - README.md
+    - README.zh-CN.md
+    - commitlint.config.js
+    - docs-build.config.json
+    - nx.json
+    - package.json
+    - pnpm-lock.yaml
+    - pnpm-workspace.yaml
+source_files: []
+depends_on: []
+related_to: []

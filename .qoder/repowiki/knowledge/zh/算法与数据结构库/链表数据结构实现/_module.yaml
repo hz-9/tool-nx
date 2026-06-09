@@ -5,5 +5,4 @@ scope:
     - packages/algorithm/src/linked-list/
 source_files: []
 depends_on: []
-related_to:
-    - path: algorithm/hashmap
+related_to: []

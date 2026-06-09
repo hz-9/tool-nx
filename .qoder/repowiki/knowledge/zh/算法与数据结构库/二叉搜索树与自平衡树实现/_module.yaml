@@ -6,4 +6,5 @@ scope:
 source_files: []
 depends_on: []
 related_to:
-    - path: algorithm/heap
+    - path: algorithm/search
+    - path: algorithm/graph

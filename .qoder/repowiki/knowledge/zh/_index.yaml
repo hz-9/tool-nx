@@ -2,32 +2,29 @@
 schema_version: 1
 locale: zh-CN
 branch: master
-exported_at: "2026-06-05T17:03:25Z"
+exported_at: "2026-06-09T08:29:13Z"
 modules:
     "":
-        dir_name: HZ-9 工具库与文档工程化平台
-        title: HZ-9 工具库与文档工程化平台
+        dir_name: Hz-9 工具链与文档基础设施
+        title: Hz-9 工具链与文档基础设施
         scope:
+            - .eslintignore
+            - .eslintrc.js
+            - .gitattributes
+            - .gitignore
+            - .markdownlint.json
+            - .nvmrc
+            - .prettierignore
+            - .prettierrc.js
+            - LICENSE
             - README.md
             - README.zh-CN.md
-            - .gitignore
-            - .gitattributes
-            - .eslintrc.js
-            - .eslintignore
-            - .prettierrc.js
-            - .prettierignore
-            - .markdownlint.json
             - commitlint.config.js
+            - docs-build.config.json
             - nx.json
             - package.json
             - pnpm-lock.yaml
             - pnpm-workspace.yaml
-            - docs-build.config.json
-            - scripts/
-            - config/
-            - docs/
-            - .nvmrc
-            - LICENSE
         source_files: []
         children: []
         depends_on: []
@@ -39,16 +36,16 @@ modules:
             - packages/algorithm/
         source_files: []
         children:
-            - algorithm/queue
-            - algorithm/linked_list
-            - algorithm/heap
+            - algorithm/stack
             - algorithm/sort
             - algorithm/search
-            - algorithm/binary_tree
-            - algorithm/algorithm_core
-            - algorithm/stack
+            - algorithm/queue
+            - algorithm/heap
             - algorithm/hashmap
             - algorithm/graph
+            - algorithm/binary_tree
+            - algorithm/algorithm_core
+            - algorithm/linked_list
         depends_on: []
         related_to: []
     algorithm/algorithm_core:
@@ -73,7 +70,8 @@ modules:
         children: []
         depends_on: []
         related_to:
-            - path: algorithm/heap
+            - path: algorithm/search
+            - path: algorithm/graph
     algorithm/graph:
         dir_name: 图数据结构与遍历算法
         title: 图数据结构与遍历算法
@@ -82,7 +80,8 @@ modules:
         source_files: []
         children: []
         depends_on: []
-        related_to: []
+        related_to:
+            - path: algorithm/binary_tree
     algorithm/hashmap:
         dir_name: 哈希表算法实现
         title: 哈希表算法实现
@@ -92,7 +91,7 @@ modules:
         children: []
         depends_on: []
         related_to:
-            - path: algorithm/linked_list
+            - path: algorithm/search
     algorithm/heap:
         dir_name: 堆数据结构实现
         title: 堆数据结构实现
@@ -102,7 +101,7 @@ modules:
         children: []
         depends_on: []
         related_to:
-            - path: algorithm/binary_tree
+            - path: algorithm/sort
     algorithm/linked_list:
         dir_name: 链表数据结构实现
         title: 链表数据结构实现
@@ -111,8 +110,7 @@ modules:
         source_files: []
         children: []
         depends_on: []
-        related_to:
-            - path: algorithm/hashmap
+        related_to: []
     algorithm/queue:
         dir_name: 队列与双向队列数据结构实现
         title: 队列与双向队列数据结构实现
@@ -133,6 +131,8 @@ modules:
         depends_on: []
         related_to:
             - path: algorithm/sort
+            - path: algorithm/binary_tree
+            - path: algorithm/hashmap
     algorithm/sort:
         dir_name: 通用排序算法库
         title: 通用排序算法库
@@ -143,6 +143,7 @@ modules:
         depends_on: []
         related_to:
             - path: algorithm/search
+            - path: algorithm/heap
     algorithm/stack:
         dir_name: 栈数据结构实现
         title: 栈数据结构实现
