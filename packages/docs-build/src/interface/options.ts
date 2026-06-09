@@ -86,6 +86,44 @@ export interface DocsBuildOptions {
 /**
  * @public
  *
+ * 单个文件复制操作的结果
+ */
+export interface CopyFileEntry {
+  /** 基础路径（去语言后缀后的相对路径） */
+  mainPath: string
+
+  /** 实际使用的源文件（相对于 baseSourceDir） */
+  sourceFile: string
+
+  /** 目标文件（相对于输出目录） */
+  targetFile: string
+
+  /** 是否为直接映射（源即 mainPath，无语言变体） */
+  isDirectMap: boolean
+}
+
+/**
+ * @public
+ *
+ * 文件复制阶段的汇总统计
+ */
+export interface DocsBuildStats {
+  /** glob 扫描的文件总数 */
+  totalScanned: number
+
+  /** 实际复制的文件总数 */
+  totalCopied: number
+
+  /** 直接映射的文件数（来源恰好为 mainPath） */
+  totalDirectMapped: number
+
+  /** 每个文件的详细记录 */
+  files: CopyFileEntry[]
+}
+
+/**
+ * @public
+ *
  * 程序调用结果
  */
 export interface DocsBuildResult {
@@ -94,4 +132,7 @@ export interface DocsBuildResult {
 
   /** 生成的 VuePress 配置文件路径 */
   configPath: string
+
+  /** 文件复制统计（可选） */
+  stats?: DocsBuildStats
 }

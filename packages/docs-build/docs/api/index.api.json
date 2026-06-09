@@ -481,6 +481,132 @@
           "extendsTokenRanges": []
         },
         {
+          "kind": "Interface",
+          "canonicalReference": "@hz-9/docs-build!CopyFileEntry:interface",
+          "docComment": "/**\n * 单个文件复制操作的结果\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface CopyFileEntry "
+            }
+          ],
+          "fileUrlPath": "src/interface/options.ts",
+          "releaseTag": "Public",
+          "name": "CopyFileEntry",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!CopyFileEntry#isDirectMap:member",
+              "docComment": "/**\n * 是否为直接映射（源即 mainPath，无语言变体）\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "isDirectMap: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "isDirectMap",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!CopyFileEntry#mainPath:member",
+              "docComment": "/**\n * 基础路径（去语言后缀后的相对路径）\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "mainPath: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "mainPath",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!CopyFileEntry#sourceFile:member",
+              "docComment": "/**\n * 实际使用的源文件（相对于 baseSourceDir）\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "sourceFile: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "sourceFile",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!CopyFileEntry#targetFile:member",
+              "docComment": "/**\n * 目标文件（相对于输出目录）\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "targetFile: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "targetFile",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
           "kind": "Class",
           "canonicalReference": "@hz-9/docs-build!DocsBuild:class",
           "docComment": "/**\n * Generate documentation build configuration\n *\n * @public\n */\n",
@@ -1020,6 +1146,165 @@
               "isOptional": false,
               "releaseTag": "Public",
               "name": "outputPath",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!DocsBuildResult#stats:member",
+              "docComment": "/**\n * 文件复制统计（可选）\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "stats?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "DocsBuildStats",
+                  "canonicalReference": "@hz-9/docs-build!DocsBuildStats:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "stats",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@hz-9/docs-build!DocsBuildStats:interface",
+          "docComment": "/**\n * 文件复制阶段的汇总统计\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface DocsBuildStats "
+            }
+          ],
+          "fileUrlPath": "src/interface/options.ts",
+          "releaseTag": "Public",
+          "name": "DocsBuildStats",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!DocsBuildStats#files:member",
+              "docComment": "/**\n * 每个文件的详细记录\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "files: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "CopyFileEntry",
+                  "canonicalReference": "@hz-9/docs-build!CopyFileEntry:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "files",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!DocsBuildStats#totalCopied:member",
+              "docComment": "/**\n * 实际复制的文件总数\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "totalCopied: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "totalCopied",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!DocsBuildStats#totalDirectMapped:member",
+              "docComment": "/**\n * 直接映射的文件数（来源恰好为 mainPath）\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "totalDirectMapped: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "totalDirectMapped",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@hz-9/docs-build!DocsBuildStats#totalScanned:member",
+              "docComment": "/**\n * glob 扫描的文件总数\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "totalScanned: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "totalScanned",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2

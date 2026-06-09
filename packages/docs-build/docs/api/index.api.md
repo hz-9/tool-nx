@@ -34,6 +34,14 @@ export interface CommanderOptions {
 }
 
 // @public
+export interface CopyFileEntry {
+    isDirectMap: boolean;
+    mainPath: string;
+    sourceFile: string;
+    targetFile: string;
+}
+
+// @public
 export class DocsBuild {
     constructor(options: DocsBuildOptions);
     static resolve(options: DocsBuildOptions): Promise<DocsBuildResult>;
@@ -58,6 +66,15 @@ export interface DocsBuildOptions {
 export interface DocsBuildResult {
     configPath: string;
     outputPath: string;
+    stats?: DocsBuildStats;
+}
+
+// @public
+export interface DocsBuildStats {
+    files: CopyFileEntry[];
+    totalCopied: number;
+    totalDirectMapped: number;
+    totalScanned: number;
 }
 
 // @public

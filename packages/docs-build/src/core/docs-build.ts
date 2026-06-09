@@ -3,11 +3,14 @@ import * as path from 'upath'
 import GitUrlParse from 'git-url-parse'
 import { glob, globSync } from 'glob'
 import _ from 'lodash'
+import ora from 'ora'
 import SimpleGit, { type ConfigValues } from 'simple-git'
 
 import type {
+  CopyFileEntry,
   DocsBuildOptions,
   DocsBuildResult,
+  DocsBuildStats,
   NavbarGroupOptions,
   NavbarLinkOptions,
   NavbarOptions,
@@ -82,7 +85,7 @@ export class DocsBuild {
     })
 
     // 5. 拷贝文件到输出目录
-    this.copyFiles(options.baseSourceDir, outputPath)
+    const stats = this.copyFiles(options.baseSourceDir, outputPath)
 
     // 6. 渲染 VuePress 模板
     await this.renderTemplates(outputPath, {
@@ -103,6 +106,7 @@ export class DocsBuild {
     return {
       outputPath,
       configPath: path.resolve(outputPath, 'src/.vuepress/config.ts'),
+      stats,
     }
   }
 
@@ -120,7 +124,7 @@ export class DocsBuild {
 
   // ─── 文件拷貝 ──────────────────────────────────────────────
 
-  private copyFiles(baseSourceDir: string, outputPath: string): void {
+  private copyFiles(baseSourceDir: string, outputPath: string): DocsBuildStats {
     const sourceDir = path.resolve(baseSourceDir)
     const targetDir = path.resolve(outputPath, 'src')
 
@@ -137,12 +141,17 @@ export class DocsBuild {
 
     fs.mkdirpSync(targetDir)
 
+    // ── 掃描階段 ─────────────────────────────────────────────
+    const scanSpinner = ora({ text: 'Scanning source files...', color: 'cyan' }).start()
+
     const scanResult = globSync('**/*', {
       cwd: sourceDir,
       nodir: true,
       dot: true,
       ignore: IGNORE_PATTERNS,
     })
+
+    scanSpinner.succeed(`Scanned ${scanResult.length} source files`)
 
     // ── 分組 ─────────────────────────────────────────────────
     // Map<mainPath, Map<lang, langFilePath>>
@@ -179,7 +188,13 @@ export class DocsBuild {
 
     // ── 拷貝文件 ─────────────────────────────────
 
-    Object.keys(fileMap).forEach((mainPath) => {
+    const entries: CopyFileEntry[] = []
+    const mainPaths = Object.keys(fileMap)
+    const totalOperations = mainPaths.length * languages.length
+
+    const copySpinner = ora({ text: 'Copying files...', color: 'cyan' }).start()
+
+    mainPaths.forEach((mainPath) => {
       const fileInfo = fileMap[mainPath]
 
       languages.forEach((lang) => {
@@ -187,7 +202,8 @@ export class DocsBuild {
 
         if (isMainLang) {
           const paths = [mainPath, ...Object.values(fileInfo)]
-          this.copyFile(sourceDir, targetDir, mainPath, paths)
+          const result = this.copyFile(sourceDir, targetDir, mainPath, paths)
+          entries.push(result)
         } else {
           const langTargetDir = path.resolve(targetDir, lang)
           const paths = [mainPath, ...Object.values(fileInfo)]
@@ -198,13 +214,27 @@ export class DocsBuild {
             paths.unshift(langFile)
           }
 
-          this.copyFile(sourceDir, langTargetDir, mainPath, paths)
+          const result = this.copyFile(sourceDir, langTargetDir, mainPath, paths)
+          entries.push(result)
         }
+
+        copySpinner.text = `Copying files... (${entries.length}/${totalOperations})`
       })
     })
+
+    const directMappedCount = entries.filter((e) => e.isDirectMap).length
+
+    copySpinner.succeed(`Copied ${entries.length} files (${directMappedCount} directly mapped)`)
+
+    return {
+      totalScanned: scanResult.length,
+      totalCopied: entries.length,
+      totalDirectMapped: directMappedCount,
+      files: entries,
+    }
   }
 
-  private copyFile(baseSourceDir: string, outputPath: string, mainPath: string, filePaths: string[]): void {
+  private copyFile(baseSourceDir: string, outputPath: string, mainPath: string, filePaths: string[]): CopyFileEntry {
     // eslint-disable-next-line no-restricted-syntax
     for (const file of filePaths) {
       const filePath = path.resolve(baseSourceDir, file)
@@ -216,8 +246,20 @@ export class DocsBuild {
         fs.mkdirpSync(targetDir)
         fs.copyFileSync(filePath, targetPath)
 
-        break
+        return {
+          mainPath,
+          sourceFile: file,
+          targetFile: mainPath,
+          isDirectMap: file === mainPath,
+        }
       }
+    }
+
+    return {
+      mainPath,
+      sourceFile: '',
+      targetFile: mainPath,
+      isDirectMap: false,
     }
   }
 
