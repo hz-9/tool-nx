@@ -12,6 +12,7 @@
 - 保持现有的 `Commander` 类模式（如 `libraries/docker-build/src/core/commander.ts`）
 - 所有 CLI 命令统一采用 `camelCase` 选项命名（commander 自动支持 `--camel-case` 转 `camelCase`）
 - 支持 `--json` 和 `--plain` 标志（clig.dev 推荐）
+- 支持 `--verbose` / `-v` 和 `--quiet` / `-q` 全局日志级别控制标志
 
 ## 二、着色方案 - chalk
 
@@ -280,7 +281,7 @@ const printHeader = (pkg: { name: string; version: string }): void => {
 }
 
 // --- 7.2 选项/配置展示 ---
-const printOptions = (opts: Record<string, unknown>): void => {
+const printOptions = (pkg: { name: string; version: string }, opts: Record<string, unknown>): void => {
   printHeader(pkg)
   console.log(`${chalk.bold('Options:')}`)
   console.log(alignKeys(opts))
@@ -337,7 +338,169 @@ if (isTTY) {
 }
 ```
 
-## 九、完整示例
+## 九、日志级别控制
+
+所有 `@hz-9` CLI 项目应实现统一的日志级别控制，支持 `--verbose` / `-v` 和 `--quiet` / `-q` 全局标志。
+
+**日志级别（从低到高）：**
+
+| 级别 | 方法 | 输出流 | 默认显示 | 说明 |
+|------|------|--------|---------|------|
+| `debug` | `logDebug()` | stderr | ❌ 需 `-v` | 调试信息，仅开发排查 |
+| `info` | `printInfo()` | stderr | ✅ | 常规进度信息 |
+| `warn` | `printWarn()` | stderr | ✅ | 警告，不中断流程 |
+| `error` | `printError()` | stderr | ✅ | 错误信息 |
+
+**`--verbose` / `-v` 行为：**
+- 每叠加一个 `-v` 降低一级日志显示门槛
+- `-v` 显示 debug 级别，`-vv` 输出更详细的内容
+
+**`--quiet` / `-q` 行为：**
+- 仅显示 error 级别及以上
+- spinner / progress 降级为静默
+
+**实现示例：**
+
+```ts
+type LogLevel = 'debug' | 'info' | 'warn' | 'error'
+
+let currentLevel: LogLevel = 'info'
+
+const LEVEL_MAP: Record<LogLevel, number> = {
+  debug: 0,
+  info: 1,
+  warn: 2,
+  error: 3,
+}
+
+const shouldLog = (level: LogLevel): boolean =>
+  LEVEL_MAP[level] >= LEVEL_MAP[currentLevel]
+
+export const setLogLevel = (level: LogLevel): void => {
+  currentLevel = level
+}
+
+export const logDebug = (msg: string): void => {
+  if (shouldLog('debug')) console.error(chalk.dim(`[debug] ${msg}`))
+}
+
+// printInfo / printWarn / printError 沿用第七节定义
+```
+
+**与 commander 集成：**
+
+```ts
+program
+  .option('-v, --verbose', 'enable debug output', false)
+  .option('-q, --quiet', 'suppress non-error output', false)
+
+const opts = program.opts()
+if (opts.verbose) setLogLevel('debug')
+if (opts.quiet) setLogLevel('error')
+```
+
+## 十、错误处理规范
+
+**退出码（Exit Code）标准：**
+
+| 场景 | 退出码 | 说明 |
+|------|--------|------|
+| 执行成功 | `0` | 正常完成 |
+| 通用错误 | `1` | 运行时错误、未捕获异常 |
+| 配置错误 | `2` | 配置文件缺失或格式错误 |
+| 参数错误 | `3` | CLI 参数校验失败 |
+| 系统错误 | `4` | 文件权限、网络、依赖缺失 |
+| 用户终止 | `130` | SIGINT (Ctrl+C) |
+
+**错误消息格式化规范：**
+- 错误消息统一使用 `printError()` 输出到 stderr
+- 用户可见的错误：简洁、不展示 stack trace
+- `--verbose` 时：追加 stack trace 到 stderr
+
+```ts
+// 标准错误处理模式
+try {
+  await main()
+} catch (error) {
+  if (currentLevel === 'debug') {
+    printError((error as Error).message)
+    console.error(chalk.dim((error as Error).stack))
+  } else {
+    printError((error as Error).message)
+  }
+  process.exit(1)
+}
+
+// SIGINT 优雅退出
+process.on('SIGINT', () => {
+  console.error(chalk.gray('\nAborted by user'))
+  process.exit(130)
+})
+```
+
+## 十一、JSON 输出规范
+
+支持 `--json` 标志的 CLI 命令应输出标准化的 JSON 结构，便于程序化消费。
+
+**标准 JSON 输出结构：**
+
+```ts
+interface JsonOutput<T = unknown> {
+  /** 执行状态 */
+  success: boolean
+  /** 数据负载 */
+  data: T
+  /** 错误信息（仅失败时） */
+  error?: {
+    code: number
+    message: string
+  }
+  /** 元信息 */
+  meta?: {
+    duration: number  // 执行耗时 (ms)
+    timestamp: string // ISO 8601 时间戳
+  }
+}
+```
+
+**实现模式：**
+
+```ts
+const printJson = <T>(data: T, meta?: { duration: number }): void => {
+  const output: JsonOutput<T> = {
+    success: true,
+    data,
+    meta: meta
+      ? { ...meta, timestamp: new Date().toISOString() }
+      : undefined,
+  }
+  console.log(JSON.stringify(output, null, 2))
+}
+
+const printJsonError = (code: number, message: string, meta?: { duration: number }): void => {
+  const output: JsonOutput<null> = {
+    success: false,
+    data: null,
+    error: { code, message },
+    meta: meta
+      ? { ...meta, timestamp: new Date().toISOString() }
+      : undefined,
+  }
+  console.log(JSON.stringify(output, null, 2))
+}
+```
+
+**集成到 commander：**
+
+```ts
+program.option('-j, --json', 'output as JSON', false)
+
+if (opts.json) {
+  // 使用 printJson 替代 console.log
+}
+```
+
+## 十二、完整示例
 
 将现有 `docker-build` 的 `util/index.ts` 应用新规范后的效果：
 
@@ -372,7 +535,7 @@ $ docker build -f ./Dockerfile -t my-app:1.0.0 .
 ✔ Docker 镜像构建成功
 ```
 
-## 十、推荐的 npm 包清单
+## 十三、推荐的 npm 包清单
 
 | 用途 | 包名 | 版本 | 理由 |
 | ------ | ------ | ------ | ------ |
@@ -386,9 +549,13 @@ $ docker build -f ./Dockerfile -t my-app:1.0.0 .
 
 每个 CLI 项目只需按需引入对应的包，遵循上述颜色方案和间距规则。
 
-## 十一、迁移路径
+## 十四、迁移路径
 
-1. 在新项目中直接遵循本规范
-2. 现有 `docker-build`、`pkg-build` 的 `util/index.ts` 逐步按规范重构
-3. 将重复的 `printOptions`、`printCommand` 按新标准统一重写
-4. `commander` 保持现有模式不变
+1. **升级依赖**：将现有项目中的 `ora` 升级到 `~8.x`，新增 `chalk@~5.x`
+2. **替换 ColorUtil**：用 `chalk` 替代自定义的 ANSI 颜色工具类
+3. **新增辅助函数**：在 `util/` 中实现 `printHeader`、`printOptions`、`printCommand`、`printInfo`、`printSuccess`、`printWarn`、`printError`、`printSeparator` 以及 `indent`、`alignKeys`
+4. **接入日志级别**：在 `commander` 中添加 `--verbose` / `--quiet` 选项，实现日志级别控制
+5. **规范 CLI 入口**：按新标准格式化 `bin/*.ts` 中的所有输出
+6. **错误处理标准化**：统一使用定义好的退出码和 `printError` 格式
+7. **按需引入增强组件**：`cli-table3`、`cli-progress`、`boxen`、`log-symbols` 等按实际场景引入
+8. **`commander`** 保持现有模式不变
