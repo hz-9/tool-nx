@@ -10,6 +10,17 @@ import { Heap } from './_base.heap'
  *
  */
 export class MaxHeap<T> extends Heap<T> {
+  /**
+   * Perform the sift-up operation for a max heap.
+   *
+   * 最大堆的上移操作。
+   *
+   * Time complexity: O(log n)
+   *
+   * Space complexity: O(1)
+   *
+   * @param index - The index of the element to be moved.
+   */
   public siftUp(index: number): void {
     const parent = this.getParentIndex(index)
 
@@ -20,6 +31,17 @@ export class MaxHeap<T> extends Heap<T> {
     }
   }
 
+  /**
+   * Perform the sift-down operation for a max heap.
+   *
+   * 最大堆的下移操作。
+   *
+   * Time complexity: O(log n)
+   *
+   * Space complexity: O(1)
+   *
+   * @param index - The index of the element to be moved.
+   */
   public siftDown(index: number): void {
     let i: number = index
 

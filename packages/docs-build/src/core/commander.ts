@@ -21,6 +21,15 @@ export interface CommanderOptions {
  * Command Line Argument Parsing Class
  */
 export class Commander {
+  /**
+   * @public
+   *
+   * Parse command-line arguments and return configuration.
+   *
+   * 解析命令行参数并返回配置。
+   *
+   * @returns The parsed command-line options.
+   */
   public static parse(): CommanderOptions {
     const pkg = readPkg()
 

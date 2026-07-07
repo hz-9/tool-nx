@@ -39,6 +39,11 @@ const arrayRemove = <T>(array: Array<T>, callback: (item: T, index: number, arra
  * 顶点类。
  */
 export class Vertice<T> {
+  /**
+   * The value of the vertex.
+   *
+   * 顶点的值。
+   */
   public readonly vertice: T
 
   public constructor(vertice: T) {
@@ -58,10 +63,25 @@ export class Vertice<T> {
  * 边类。
  */
 export class Edge<V> {
+  /**
+   * The source vertex of the edge.
+   *
+   * 边的起始顶点。
+   */
   public readonly from: V
 
+  /**
+   * The target vertex of the edge.
+   *
+   * 边的目标顶点。
+   */
   public readonly to: V
 
+  /**
+   * The weight of the edge.
+   *
+   * 边的权重。
+   */
   public weight: number
 
   public constructor(from: V, to: V, weight: number) {
@@ -119,6 +139,14 @@ export class Graph<T> implements Base<IGraphToArrayItem<T>> {
    */
   protected readonly _equalsFn: (a?: T, b?: T) => boolean
 
+  /**
+   * Constructs a new graph.
+   *
+   * 构造一个新的图。
+   *
+   * @param isDirected - Whether the graph is directed. Default is false.
+   * @param equalsFn - The equality comparison function. Defaults to strict equality.
+   */
   public constructor(isDirected: boolean = false, equalsFn: EqualsFn<T> = defaultEquals) {
     this.isDirected = isDirected
     this.vertices = []
@@ -300,11 +328,27 @@ export class Graph<T> implements Base<IGraphToArrayItem<T>> {
     return true
   }
 
+  /**
+   * Clear the graph.
+   *
+   * 清空图。
+   *
+   * Time complexity: O(1)
+   *
+   * Space complexity: O(1)
+   */
   public clear(): void {
     this.vertices.length = 0
     this.adjList.clear()
   }
 
+  /**
+   * Returns a string representation of the graph.
+   *
+   * 返回图的字符串表示。
+   *
+   * @returns The string representation.
+   */
   public toString(): string {
     let str = ''
     this.adjList.forEach((value, key) => {
@@ -314,6 +358,13 @@ export class Graph<T> implements Base<IGraphToArrayItem<T>> {
     return str
   }
 
+  /**
+   * Returns an array representation of the graph.
+   *
+   * 返回图的数组表示。
+   *
+   * @returns The array representation.
+   */
   public toArray(): IGraphToArrayItem<T>[] {
     const array: IGraphToArrayItem<T>[] = []
 

@@ -9,10 +9,25 @@ import type { OrderTraverseCallback } from '../types/index'
  * 树结构中的节点。
  */
 export class TreeNode<T> {
+  /**
+   * The value stored in the node.
+   *
+   * 节点中存储的值。
+   */
   public val: T
 
+  /**
+   * Pointer to the left child node.
+   *
+   * 指向左子节点的指针。
+   */
   public left?: TreeNode<T>
 
+  /**
+   * Pointer to the right child node.
+   *
+   * 指向右子节点的指针。
+   */
   public right?: TreeNode<T>
 
   public constructor(val: T, left?: TreeNode<T>, right?: TreeNode<T>) {

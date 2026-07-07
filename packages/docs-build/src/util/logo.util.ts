@@ -16,6 +16,8 @@ export class LogoUtil {
 
   /**
    * Logo text content.
+   *
+   * Logo 文本内容。
    */
   public static get content(): string {
     if (!this._content) {
@@ -27,6 +29,8 @@ export class LogoUtil {
 
   /**
    * Print the logo and version information.
+   *
+   * 打印 logo 和版本信息。
    *
    * @param onlyLogo - Only print the logo, without version info. Optional, defaults to false.
    */

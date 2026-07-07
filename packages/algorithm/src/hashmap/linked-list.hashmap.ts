@@ -30,6 +30,14 @@ export class LinkedListHashmap<K, V> implements Hashmap<K, V> {
 
   protected _toHashCode: ToHashCode
 
+  /**
+   * Constructs a new linked-list chaining hash map.
+   *
+   * 构造一个新的链式寻址哈希表。
+   *
+   * @param toKeyStr - Function to convert a key to a string.
+   * @param toHashCode - Function to convert a string key to a hash code.
+   */
   public constructor(toKeyStr: ToKeyStr<K> = toKeyStrDefault, toHashCode: ToHashCode = loseloseHashCode) {
     this._items = {}
 
@@ -40,14 +48,38 @@ export class LinkedListHashmap<K, V> implements Hashmap<K, V> {
     this._toHashCode = toHashCode
   }
 
+  /**
+   * The number of key-value pairs in the hash map.
+   *
+   * 哈希表中键值对的数量。
+   */
   public get size(): number {
     return this._size
   }
 
+  /**
+   * Whether the hash map is empty.
+   *
+   * 哈希表是否为空。
+   */
   public get isEmpty(): boolean {
     return this.size === 0
   }
 
+  /**
+   * Adds a key-value pair to the hash map.
+   *
+   * 将键值对添加到哈希表中。
+   *
+   * Time complexity: O(1) average, O(n) worst case
+   *
+   * Space complexity: O(1)
+   *
+   * @param key - The key object.
+   * @param value - The value information.
+   *
+   * @returns Whether the addition is successful.
+   */
   public set(key: K, value: V): boolean {
     const keyStr: number = this._toHashCode(this._toKeyStr(key))
 
@@ -76,6 +108,19 @@ export class LinkedListHashmap<K, V> implements Hashmap<K, V> {
     return true
   }
 
+  /**
+   * Retrieves the value from the hash map based on the key.
+   *
+   * 根据键从哈希表中获取值。
+   *
+   * Time complexity: O(1) average, O(n) worst case
+   *
+   * Space complexity: O(1)
+   *
+   * @param key - The key object.
+   *
+   * @returns The value object. Returns undefined if the key does not exist.
+   */
   public get(key: K): V | undefined {
     const keyStr: number = this._toHashCode(this._toKeyStr(key))
     if (!this._items[keyStr]) return undefined
@@ -89,10 +134,36 @@ export class LinkedListHashmap<K, V> implements Hashmap<K, V> {
     return undefined
   }
 
+  /**
+   * Checks if the hash map contains a value for the key.
+   *
+   * 判断在哈希表中是否有该键的值。
+   *
+   * Time complexity: O(1) average, O(n) worst case
+   *
+   * Space complexity: O(1)
+   *
+   * @param key - The key object.
+   *
+   * @returns Whether the key has a value in the hash map.
+   */
   public has(key: K): boolean {
     return !!this.get(key)
   }
 
+  /**
+   * Removes the key from the hash map.
+   *
+   * 在哈希表中删除该键。
+   *
+   * Time complexity: O(1) average, O(n) worst case
+   *
+   * Space complexity: O(1)
+   *
+   * @param key - The key object.
+   *
+   * @returns Whether the removal is successful.
+   */
   public remove(key: K): boolean {
     const keyStr: number = this._toHashCode(this._toKeyStr(key))
     if (!this._items[keyStr]) return false
@@ -103,11 +174,27 @@ export class LinkedListHashmap<K, V> implements Hashmap<K, V> {
     return removeResult
   }
 
+  /**
+   * Clear the hash map.
+   *
+   * 清空哈希表。
+   *
+   * Time complexity: O(1)
+   *
+   * Space complexity: O(1)
+   */
   public clear(): void {
     this._size = 0
     this._items = {}
   }
 
+  /**
+   * Returns a string representation of the hash map.
+   *
+   * 返回哈希表的字符串表示。
+   *
+   * @returns The string representation.
+   */
   public toString(): string {
     let str = ''
 
@@ -126,6 +213,13 @@ export class LinkedListHashmap<K, V> implements Hashmap<K, V> {
     return str
   }
 
+  /**
+   * Returns an array representation of the hash map.
+   *
+   * 返回哈希表的数组表示。
+   *
+   * @returns The array representation.
+   */
   public toArray(): IKeyValueObj<K, V>[] {
     const array: IKeyValueObj<K, V>[] = []
 

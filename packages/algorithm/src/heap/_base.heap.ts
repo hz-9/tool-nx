@@ -14,6 +14,13 @@ export abstract class Heap<T> implements Base<T> {
 
   protected readonly _compareFn: CompareFn<T>
 
+  /**
+   * Constructs a new heap.
+   *
+   * 构造一个新的堆。
+   *
+   * @param compareFn - The comparison function used to determine the order of the elements.
+   */
   public constructor(compareFn: CompareFn<T> = defaultCompare) {
     this._compareFn = compareFn
 
@@ -22,10 +29,20 @@ export abstract class Heap<T> implements Base<T> {
     this._size = 0
   }
 
+  /**
+   * The number of elements in the heap.
+   *
+   * 堆中元素的数量。
+   */
   public get size(): number {
     return this._size
   }
 
+  /**
+   * Whether the heap is empty.
+   *
+   * 堆是否为空。
+   */
   public get isEmpty(): boolean {
     return this._size === 0
   }
@@ -186,7 +203,7 @@ export abstract class Heap<T> implements Base<T> {
    *
    * 清空堆。
    *
-   * ime complexity: O(1)
+   * Time complexity: O(1)
    *
    * Space complexity: O(1)
    */
@@ -195,6 +212,17 @@ export abstract class Heap<T> implements Base<T> {
     this._size = 0
   }
 
+  /**
+   * Returns a string representation of the heap.
+   *
+   * 返回堆的字符串表示。
+   *
+   * Time complexity: O(n)
+   *
+   * Space complexity: O(n)
+   *
+   * @returns The string representation.
+   */
   public toString(): string {
     let str = ''
     this._list.forEach((i) => {
@@ -203,6 +231,17 @@ export abstract class Heap<T> implements Base<T> {
     return str
   }
 
+  /**
+   * Returns an array representation of the heap.
+   *
+   * 返回堆的数组表示。
+   *
+   * Time complexity: O(n)
+   *
+   * Space complexity: O(n)
+   *
+   * @returns The array representation.
+   */
   public toArray(): Array<T> {
     return this._list.filter((i) => i !== undefined)
   }

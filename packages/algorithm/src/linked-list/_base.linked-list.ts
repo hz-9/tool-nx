@@ -64,6 +64,13 @@ export abstract class LinkedList<T, N extends LinkedListNode<T> = LinkedListNode
    */
   protected readonly _equalsFn: EqualsFn<T>
 
+  /**
+   * Constructs a new linked list.
+   *
+   * 构造一个新的链表。
+   *
+   * @param equalsFn - The equality comparison function. Defaults to strict equality.
+   */
   public constructor(equalsFn: EqualsFn<T> = defaultEquals) {
     this._headNode = undefined
     this._tailNode = undefined
@@ -370,12 +377,32 @@ export abstract class LinkedList<T, N extends LinkedListNode<T> = LinkedListNode
    */
   public abstract remove(value: T): boolean
 
+  /**
+   * Clear the linked list.
+   *
+   * 清空链表。
+   *
+   * Time Complexity: O(1)
+   *
+   * Space Complexity: O(1)
+   */
   public clear(): void {
     this._headNode = undefined
     this._tailNode = undefined
     this._size = 0
   }
 
+  /**
+   * Returns a string representation of the linked list.
+   *
+   * 返回链表的字符串表示。
+   *
+   * Time Complexity: O(n)
+   *
+   * Space Complexity: O(n)
+   *
+   * @returns The string representation.
+   */
   public toString(): string {
     if (!this._headNode) return ''
 
@@ -389,6 +416,17 @@ export abstract class LinkedList<T, N extends LinkedListNode<T> = LinkedListNode
     return str
   }
 
+  /**
+   * Returns an array representation of the linked list.
+   *
+   * 返回链表的数组表示。
+   *
+   * Time Complexity: O(n)
+   *
+   * Space Complexity: O(n)
+   *
+   * @returns The array representation.
+   */
   public toArray(): T[] {
     const array: T[] = []
     let currentNode = this.headNode

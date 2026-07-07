@@ -9,10 +9,15 @@ import type { DocsBuildOptions } from '../interface/index'
  */
 export class DocsOptions {
   /**
-   * 从文件加载并校验配置
+   * @public
    *
-   * @param configPath - 配置文件绝对路径
-   * @returns 校验通过的配置对象
+   * Load and validate configuration from a JSON file.
+   *
+   * 从文件加载并校验配置。
+   *
+   * @param configPath - The absolute path to the configuration file.
+   *
+   * @returns The validated configuration object.
    */
   public static load(configPath: string): DocsBuildOptions {
     if (!fs.existsSync(configPath)) {
@@ -27,7 +32,14 @@ export class DocsOptions {
   }
 
   /**
-   * 验证配置文件必需的字段
+   * @public
+   *
+   * Validate required fields in the configuration.
+   * Throws descriptive errors if required fields are missing.
+   *
+   * 验证配置文件必需的字段。
+   *
+   * @param config - The configuration object to validate.
    */
   public static validateConfig(config: unknown): asserts config is DocsBuildOptions {
     if (typeof config !== 'object' || config === null) {

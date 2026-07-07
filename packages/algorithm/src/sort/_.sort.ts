@@ -1,4 +1,6 @@
 /**
+ * @public
+ *
  * Swaps two elements in an array.
  *
  * @param arr - The array.

@@ -17,14 +17,43 @@ enum Color {
  *  红黑树节点
  */
 export class RedBlackTreeNode<T> extends TreeNode<T> {
+  /**
+   * Parent node reference.
+   *
+   * 父节点引用。
+   */
   public parent: RedBlackTreeNode<T> | undefined
 
+  /**
+   * Node color (red or black).
+   *
+   * 节点颜色（红或黑）。
+   */
   public color: Color | undefined
 
+  /**
+   * Left child node.
+   *
+   * 左子节点。
+   */
   public left: RedBlackTreeNode<T> | undefined
 
+  /**
+   * Right child node.
+   *
+   * 右子节点。
+   */
   public right: RedBlackTreeNode<T> | undefined
 
+  /**
+   * Constructs a new red-black tree node.
+   *
+   * 构造一个新的红黑树节点。
+   *
+   * @param val - The node value.
+   * @param left - The left child node.
+   * @param right - The right child node.
+   */
   public constructor(val: T, left?: RedBlackTreeNode<T>, right?: RedBlackTreeNode<T>) {
     super(val, left, right)
 
@@ -44,6 +73,14 @@ export class RedBlackTreeNode<T> extends TreeNode<T> {
 export class RedBlackTree<T> extends BinarySearchTree<T> {
   protected _root?: RedBlackTreeNode<T>
 
+  /**
+   * Add a value to a node and return the new or updated node.
+   *
+   * 将一个值添加到节点中，并返回新节点或更新后的节点。
+   *
+   * @param node - The base node.
+   * @param value - The value to be added.
+   */
   protected _addNode(node: RedBlackTreeNode<T> | undefined, value: T): RedBlackTreeNode<T> | undefined {
     if (!node) {
       this._size += 1
@@ -73,6 +110,13 @@ export class RedBlackTree<T> extends BinarySearchTree<T> {
     return node
   }
 
+  /**
+   * Fix the red-black tree properties after insertion.
+   *
+   * 插入后修复红黑树属性。
+   *
+   * @param node - The node to start fixing from.
+   */
   protected _fixTreeNode(node: RedBlackTreeNode<T>): void {
     while (node.parent && node.parent.color === Color.RED && node.color !== Color.BLACK) {
       let parent = node.parent as RedBlackTreeNode<T>
@@ -127,6 +171,13 @@ export class RedBlackTree<T> extends BinarySearchTree<T> {
     }
   }
 
+  /**
+   * Left rotation (Left-Left case).
+   *
+   * 左旋转（左-左情况）。
+   *
+   * @param node - The node to rotate.
+   */
   protected rotationLL(node: RedBlackTreeNode<T>): void {
     const tmp = node.left
     if (tmp) {
@@ -149,6 +200,13 @@ export class RedBlackTree<T> extends BinarySearchTree<T> {
     node.parent = tmp
   }
 
+  /**
+   * Right rotation (Right-Right case).
+   *
+   * 右旋转（右-右情况）。
+   *
+   * @param node - The node to rotate.
+   */
   protected rotationRR(node: RedBlackTreeNode<T>): void {
     const tmp = node.right
     if (tmp) {
@@ -171,6 +229,17 @@ export class RedBlackTree<T> extends BinarySearchTree<T> {
     node.parent = tmp
   }
 
+  /**
+   * Add an element to the red-black tree.
+   *
+   * 添加一个元素到红黑树中。
+   *
+   * Time complexity: O(log n)
+   *
+   * Space complexity: O(1)
+   *
+   * @param value - The value to be added.
+   */
   public add(value: T): void {
     if (!this._root) {
       this._root = new RedBlackTreeNode(value)

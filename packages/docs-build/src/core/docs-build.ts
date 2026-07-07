@@ -32,12 +32,27 @@ import { IGNORE_PATTERNS } from './constants'
 export class DocsBuild {
   private readonly options: DocsBuildOptions
 
+  /**
+   * Constructs a new DocsBuild instance.
+   *
+   * 构造一个新的 DocsBuild 实例。
+   *
+   * @param options - The documentation build options.
+   */
   public constructor(options: DocsBuildOptions) {
     this.options = options
   }
 
   /**
-   * 执行文档构建
+   * @public
+   *
+   * Static entry point: create a DocsBuild instance and execute the build.
+   *
+   * 执行文档构建。
+   *
+   * @param options - The documentation build options.
+   *
+   * @returns The build result.
    */
   public static async resolve(options: DocsBuildOptions): Promise<DocsBuildResult> {
     const build = new DocsBuild(options)
@@ -45,7 +60,13 @@ export class DocsBuild {
   }
 
   /**
-   * 主入口
+   * @public
+   *
+   * Main entry: generate VuePress configuration from the build options.
+   *
+   * 主入口。
+   *
+   * @returns The build result.
    */
   public async resolve(): Promise<DocsBuildResult> {
     const { options } = this
@@ -110,6 +131,18 @@ export class DocsBuild {
     }
   }
 
+  /**
+   * Transform navbar options for a specific language.
+   * Resolves multilingual text in each navbar item.
+   *
+   * 转换导航栏配置为指定语言。
+   * 解析每个导航项中的多语言文本。
+   *
+   * @param options - The navbar options to transform.
+   * @param lang - The target language.
+   *
+   * @returns The transformed navbar options.
+   */
   public transformNavbarOptions(options: NavbarOptions, lang: string): NavbarOptions {
     return options.map((item) => this.transformNavItem(item, lang))
   }
@@ -291,6 +324,18 @@ export class DocsBuild {
 
   // ─── 側邊欄轉換 ──────────────────────────────────────────────
 
+  /**
+   * Transform sidebar options for a specific language.
+   * Resolves multilingual text in each sidebar item.
+   *
+   * 转换侧边栏配置为指定语言。
+   * 解析每个侧边栏项中的多语言文本。
+   *
+   * @param options - The sidebar options to transform.
+   * @param lang - The target language.
+   *
+   * @returns The transformed sidebar options.
+   */
   public transformSidebarOptions(options: SidebarOptions, lang: string): SidebarOptions {
     if (typeof options === 'string' || options === false) {
       return options

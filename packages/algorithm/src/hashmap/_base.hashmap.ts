@@ -8,8 +8,18 @@ import { Base } from '../_base'
  * 一个键值对。
  */
 export class KeyValue<K, V> {
+  /**
+   * The key of the key-value pair.
+   *
+   * 键值对的键。
+   */
   public readonly key: K
 
+  /**
+   * The value of the key-value pair.
+   *
+   * 键值对的值。
+   */
   public readonly value: V
 
   /**

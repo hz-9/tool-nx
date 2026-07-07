@@ -1,12 +1,16 @@
 import { Base } from '../_base/index'
 
 /**
+ * @public
+ *
  * Stack base class.
  *
  * 栈基类。
  */
 export abstract class Stack<T> extends Base<T> {
   /**
+   * @public
+   *
    * Adds a new element to the top of the stack.
    *
    * 在栈顶添加一个新元素。
@@ -21,6 +25,8 @@ export abstract class Stack<T> extends Base<T> {
   public abstract push(val: T): void
 
   /**
+   * @public
+   *
    * Returns the top element of the stack without removing it.
    *
    * 返回栈顶的元素，但不从栈内移除。
@@ -35,6 +41,8 @@ export abstract class Stack<T> extends Base<T> {
   public abstract peek(): T | undefined
 
   /**
+   * @public
+   *
    * Returns the top element of the stack and removes it from the stack.
    *
    * 返回栈顶的元素，并从栈内移除。

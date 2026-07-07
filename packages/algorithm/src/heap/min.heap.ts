@@ -10,6 +10,17 @@ import { Heap } from './_base.heap'
  *
  */
 export class MinHeap<T> extends Heap<T> {
+  /**
+   * Perform the sift-up operation for a min heap.
+   *
+   * 最小堆的上移操作。
+   *
+   * Time complexity: O(log n)
+   *
+   * Space complexity: O(1)
+   *
+   * @param index - The index of the element to be moved.
+   */
   public siftUp(index: number): void {
     const parent = this.getParentIndex(index)
 
@@ -20,6 +31,17 @@ export class MinHeap<T> extends Heap<T> {
     }
   }
 
+  /**
+   * Perform the sift-down operation for a min heap.
+   *
+   * 最小堆的下移操作。
+   *
+   * Time complexity: O(log n)
+   *
+   * Space complexity: O(1)
+   *
+   * @param index - The index of the element to be moved.
+   */
   public siftDown(index: number): void {
     let i: number = index
 

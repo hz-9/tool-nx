@@ -9,6 +9,20 @@ import { SimpleHashmap } from './simple.hashmap'
  * 一个使用线性探查的哈希表。
  */
 export class LinearProbingHashmap<K, V> extends SimpleHashmap<K, V> {
+  /**
+   * Adds a key-value pair to the hash map using linear probing.
+   *
+   * 使用线性探查将键值对添加到哈希表中。
+   *
+   * Time complexity: O(1) average, O(n) worst case
+   *
+   * Space complexity: O(1)
+   *
+   * @param key - The key object.
+   * @param value - The value information.
+   *
+   * @returns Whether the addition is successful.
+   */
   public set(key: K, value: V): boolean {
     const keyStr: number = this._toHashCode(this._toKeyStr(key))
 
@@ -35,6 +49,19 @@ export class LinearProbingHashmap<K, V> extends SimpleHashmap<K, V> {
     return true
   }
 
+  /**
+   * Retrieves the value from the hash map based on the key using linear probing.
+   *
+   * 使用线性探查根据键从哈希表中获取值。
+   *
+   * Time complexity: O(1) average, O(n) worst case
+   *
+   * Space complexity: O(1)
+   *
+   * @param key - The key object.
+   *
+   * @returns The value object. Returns undefined if the key does not exist.
+   */
   public get(key: K): V | undefined {
     const keyStr: number = this._toHashCode(this._toKeyStr(key))
     if (!this._items[keyStr]) return undefined
@@ -51,6 +78,19 @@ export class LinearProbingHashmap<K, V> extends SimpleHashmap<K, V> {
     return undefined
   }
 
+  /**
+   * Removes the key from the hash map using linear probing.
+   *
+   * 使用线性探查在哈希表中删除该键。
+   *
+   * Time complexity: O(1) average, O(n) worst case
+   *
+   * Space complexity: O(1)
+   *
+   * @param key - The key object.
+   *
+   * @returns Whether the removal is successful.
+   */
   public remove(key: K): boolean {
     const keyStr: number = this._toHashCode(this._toKeyStr(key))
     if (!this._items[keyStr]) return false

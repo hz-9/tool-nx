@@ -21,6 +21,19 @@ export class SinglyLinkedListNode<T> extends LinkedListNode<T> {}
  *
  */
 export class SinglyLinkedList<T> extends LinkedList<T, SinglyLinkedListNode<T>> {
+  /**
+   * Add a new element to the end of the linked list.
+   *
+   * 在链尾添加一个新元素。
+   *
+   * Time Complexity: O(1)
+   *
+   * Space Complexity: O(1)
+   *
+   * @param value - The element to be added.
+   *
+   * @returns Whether the addition was successful.
+   */
   public push(value: T): boolean {
     const node = new SinglyLinkedListNode(value)
 
@@ -37,6 +50,17 @@ export class SinglyLinkedList<T> extends LinkedList<T, SinglyLinkedListNode<T>> 
     return true
   }
 
+  /**
+   * Remove a node from the end of the linked list and return it.
+   *
+   * 在链尾删除一个节点，并返回该节点。
+   *
+   * Time Complexity: O(n) - Must traverse to the penultimate node.
+   *
+   * Space Complexity: O(1)
+   *
+   * @returns The removed node, or undefined if the list is empty.
+   */
   public popNode(): SinglyLinkedListNode<T> | undefined {
     if (!this._tailNode || !this._headNode) return undefined
 
@@ -62,6 +86,19 @@ export class SinglyLinkedList<T> extends LinkedList<T, SinglyLinkedListNode<T>> 
     return temp
   }
 
+  /**
+   * Add a new element to the beginning of the linked list.
+   *
+   * 向链头添加一个新元素。
+   *
+   * Time Complexity: O(1)
+   *
+   * Space Complexity: O(1)
+   *
+   * @param value - The element to be added.
+   *
+   * @returns Whether the addition was successful.
+   */
   public unshift(value: T): boolean {
     const node = new SinglyLinkedListNode(value)
 
@@ -78,6 +115,17 @@ export class SinglyLinkedList<T> extends LinkedList<T, SinglyLinkedListNode<T>> 
     return true
   }
 
+  /**
+   * Remove a node from the beginning of the linked list and return it.
+   *
+   * 在链头删除一个节点，并返回该节点。
+   *
+   * Time Complexity: O(1)
+   *
+   * Space Complexity: O(1)
+   *
+   * @returns The removed node, or undefined if the list is empty.
+   */
   public shiftNode(): SinglyLinkedListNode<T> | undefined {
     if (!this._tailNode || !this._headNode) return undefined
 
@@ -94,6 +142,20 @@ export class SinglyLinkedList<T> extends LinkedList<T, SinglyLinkedListNode<T>> 
     return temp
   }
 
+  /**
+   * Add a new element at a specific position in the linked list.
+   *
+   * 在链表某个位置添加元素。
+   *
+   * Time Complexity: O(n)
+   *
+   * Space Complexity: O(1)
+   *
+   * @param index - The position to add at.
+   * @param value - The element to be added.
+   *
+   * @returns Whether the addition was successful.
+   */
   public addAt(index: number, value: T): boolean {
     if (index < 0 || index > this.size) return false
 
@@ -122,6 +184,19 @@ export class SinglyLinkedList<T> extends LinkedList<T, SinglyLinkedListNode<T>> 
     return true
   }
 
+  /**
+   * Remove a node at a specific position in the linked list.
+   *
+   * 删除链表某个位置的节点。
+   *
+   * Time Complexity: O(n)
+   *
+   * Space Complexity: O(1)
+   *
+   * @param index - The position to remove.
+   *
+   * @returns Whether the removal was successful.
+   */
   public removeAt(index: number): boolean {
     if (index < 0 || index > this.size) return false
 
@@ -148,6 +223,19 @@ export class SinglyLinkedList<T> extends LinkedList<T, SinglyLinkedListNode<T>> 
     return true
   }
 
+  /**
+   * Remove a specific element from the linked list.
+   *
+   * 删除某个元素。
+   *
+   * Time Complexity: O(n)
+   *
+   * Space Complexity: O(1)
+   *
+   * @param value - The element to remove.
+   *
+   * @returns Whether the removal was successful.
+   */
   public remove(value: T): boolean {
     if (this._equalsFn(this.head, value)) {
       this.shiftNode()
