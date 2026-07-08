@@ -4,25 +4,28 @@
 
 > **目录**
 >
-> 一、[命令解析 - commander](#一命令解析---commander)
-> 二、[着色方案 - chalk](#二着色方案---chalk)
-> 三、[间距控制规范](#三间距控制规范)
->   3.4 [超长值截断与换行策略](#34-超长值截断与换行策略)
-> 四、[Loading 效果 - ora](#四loading-效果---ora)
-> 五、[表格效果 - cli-table3](#五表格效果---cli-table3)
-> 六、[Downloading 效果 - cli-progress](#六downloading-效果---cli-progress)
-> 七、[辅助工具集](#七辅助工具集规范建议实现的工具函数)
-> 八、[输出流规范](#八输出流规范)
-> 九、[日志级别控制](#九日志级别控制)
-> 十、[错误处理规范](#十错误处理规范)
-> 十一、[JSON 输出规范](#十一json-输出规范)
-> 十二、[Deprecation 警告格式](#十二deprecation-警告格式)
-> 十三、[敏感信息脱敏规范](#十三敏感信息脱敏规范)
-> 十四、[交互式提示/确认规范](#十四交互式提示确认规范)
-> 十五、[完整示例](#十五完整示例)
-> 十六、[推荐的 npm 包清单](#十六推荐的-npm-包清单)
-> 十七、[迁移路径](#十七迁移路径)
-> 十八、[合规检查清单](#十八合规检查清单)
+> - 一、[命令解析 - commander](#一命令解析---commander)
+> - 二、[着色方案 - chalk](#二着色方案---chalk)
+> - 三、[间距控制规范](#三间距控制规范)
+>   - 3.1 [基本间距规则](#31-基本间距规则)
+>   - 3.2 [具体间距标准](#32-具体间距标准示例均输出到-stderr符合流规范)
+>   - 3.3 [Indent 辅助函数](#33-indent-辅助函数规范要求)
+>   - 3.4 [超长值截断与换行策略](#34-超长值截断与换行策略)
+> - 四、[Loading 效果 - ora](#四loading-效果---ora)
+> - 五、[表格效果 - cli-table3](#五表格效果---cli-table3)
+> - 六、[Downloading 效果 - cli-progress](#六downloading-效果---cli-progress)
+> - 七、[辅助工具集](#七辅助工具集规范建议实现的工具函数)
+> - 八、[输出流规范](#八输出流规范)
+> - 九、[日志级别控制](#九日志级别控制)
+> - 十、[错误处理规范](#十错误处理规范)
+> - 十一、[JSON 输出规范](#十一json-输出规范)
+> - 十二、[Deprecation 警告格式](#十二deprecation-警告格式)
+> - 十三、[敏感信息脱敏规范](#十三敏感信息脱敏规范)
+> - 十四、[交互式提示/确认规范](#十四交互式提示确认规范)
+> - 十五、[完整示例](#十五完整示例)
+> - 十六、[推荐的 npm 包清单](#十六推荐的-npm-包清单)
+> - 十七、[迁移路径](#十七迁移路径)
+> - 十八、[合规检查清单](#十八合规检查清单)
 
 ## 一、命令解析 - commander
 
@@ -67,6 +70,8 @@ chalk.bold.white(str)     // 标题/关键值
 chalk.hex('#FF8800')(str) // 轮询/下载 URL（仅限特需场景）
 ```
 
+> **注意：** 上述代码示例为直观展示颜色效果，硬编码了 Unicode 符号字符 `ℹ` `✔` `⚠` `✖`。实际生产代码应通过 [`log-symbols`](https://github.com/sindresorhus/log-symbols) 获取符号，以确保跨平台兼容性。详见下文说明。
+
 **输出格式模板（搭配第七节的辅助函数使用）：**
 
 > 以下示例使用 `console.error`（stderr）展示 UI 元素。实际生产代码应调用第七节定义的 `printHeader`、`printOptions`、`printInfo` 等函数。
@@ -109,7 +114,7 @@ console.error(`${chalk.gray('$')} ${chalk.cyan(command)}`)
 **终端与 Unicode 兼容性：**
 
 - **Windows Terminal：** 现代 Windows Terminal (Win10 1903+/Win11) 对上述 16 色标准色和 Unicode 符号支持良好。`chalk` 自动处理 Windows 控制台颜色适配，无需额外配置。
-- **Unicode 符号回退：** `log-symbols` 在 Windows 旧终端 (`cmd.exe`) 下自动回退为 `!` `√` `?` `×` 等 ASCII 替代符号。建议始终通过 `log-symbols` 获取符号而非硬编码。
+- **Unicode 符号回退：** `log-symbols` 在 Windows 旧终端 (`cmd.exe`) 下自动回退为 `!` `√` `?` `×` 等兼容符号。建议始终通过 `log-symbols` 获取符号而非硬编码。
 - **emoji 使用限制：** CLI 输出中不应使用 emoji 符号。统一使用 `log-symbols` 的语义符号（`✔` `✖` `⚠` `ℹ`）和 `•` `─` `│` 等标准 ASCII/Unicode 字符。
 - **NO_COLOR 标准：** 遵循 [no-color.org](https://no-color.org/)，设置 `NO_COLOR=1` 时 chalk 自动禁用所有颜色。此外，项目应主动检测 `TERM=dumb` 环境变量并降级。
 - **FORCE_COLOR：** 当 CI/CD 环境需要强制着色（如日志收集）时，设置 `FORCE_COLOR=1`，chalk 会忽略非 TTY 限制强制输出颜色。
@@ -526,7 +531,7 @@ const printTruncated = (label: string, value: string, maxLen = 60): void => {
 
 **调整后的完整工具集导出：**
 
-> `printJson` 和 `printJsonError` 定义见[第十一节](#十一json-输出规范)。`setLogLevel` 和 `logDebug` 定义见[第九节](#九日志级别控制)。`truncateMiddle`、`shortenPath` 和 `printTruncated` 定义见[第三节 3.4](#34-超长值截断与换行策略)。
+> `printJson` 和 `printJsonError` 定义见[第十一节](#十一json-输出规范)。`setLogLevel` 和 `logDebug` 定义见[第九节](#九日志级别控制)。`truncateMiddle` 和 `shortenPath` 定义见[第三节 3.4](#34-超长值截断与换行策略)，`printTruncated` 定义见[第七节 7.12](#七辅助工具集规范建议实现的工具函数)。
 
 ```ts
 // util/index.ts
@@ -702,13 +707,7 @@ if (opts.json) {
 
 **JSON 模式下的退出码行为：**
 
-| 输出 | success | exit code | 说明 |
-|------|---------|-----------|------|
-| 成功 | `true` | `0` | 正常返回 |
-| 业务失败 | `false` + `error` | `0` | pipe 端通过 `success` 判断，不中断管道 |
-| 系统崩溃 | `false` + `error` | `1` | JSON 解析前的崩溃，无 JSON 输出 |
-
-> 注意：`--json` 模式下，业务逻辑的错误**不应**导致非零退出码，而是通过 JSON 结构中的 `success: false` 表达。仅当 JSON 本身无法生成时（如内存不足、磁盘满）才使用非零退出码。
+参见[第十一节 - JSON 模式下的退出码行为](#十一json-输出规范)。
 
 ## 十、错误处理规范
 
@@ -964,9 +963,14 @@ const sanitizeUrl = (url: string): string => {
   try {
     const parsed = new URL(url)
     if (parsed.username) {
+      const hasPassword = !!parsed.password
       parsed.username = ''
       parsed.password = ''
-      return parsed.toString().replace('://', '://***:***@')
+      const sanitized = parsed.toString()
+      if (hasPassword) {
+        return sanitized.replace('://', '://***:***@')
+      }
+      return sanitized.replace('://', '://***@')
     }
     return url
   } catch {
@@ -1001,10 +1005,15 @@ const sanitizeEnv = (env: Record<string, string | undefined>): Record<string, st
 ```ts
 import readline from 'node:readline'
 
+// 全局 --yes 标志，由 commander 的 --yes/-y 选项设置
+let globalYesFlag = false
+
 // 简单的确认提示
 const confirmOrExit = async (message: string, opts?: { defaultYes?: boolean; isHighRisk?: boolean }): Promise<boolean> => {
-  // 非 TTY 或全局 --yes 标志：自动决策
-  if (process.env.CI || opts?.isHighRisk === false) {
+  // 非交互环境（pipe 或 CI）自动决策
+  if (process.env.CI || !process.stderr.isTTY) {
+    // 高危操作在非交互环境下默认拒绝
+    if (opts?.isHighRisk) return false
     return opts?.defaultYes ?? true
   }
 
@@ -1161,6 +1170,7 @@ Error: 配置文件不存在
 7. **按需引入增强组件**：`cli-table3`、`cli-progress`、`boxen`、`log-symbols`
    - ✅ 验证：按实际场景引入，避免过度依赖
 8. **`commander`** 保持现有模式不变
+   - ✅ 验证：检查 `bin/*.ts` 中 `Commander` 类的使用模式
 
 ## 十八、合规检查清单
 
