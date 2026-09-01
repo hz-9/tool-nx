@@ -33,6 +33,7 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+.pnpm-store/
 
 # Optional npm cache directory
 .npm
@@ -82,3 +83,4 @@ nx-cloud.env
 
 # Changesets
 .changeset/pre.json
+.dsh-worktrees/
